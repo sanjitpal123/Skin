@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skincare Products | Aastra Aesthetic By Sania - Premium Clinical Collection</title>
+    
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#B8860B',     /* Dark Goldenrod */
+                            secondary: '#FFFFFF',   /* Pure White */
+                            accent: '#D4AF37',      /* Classic Gold */
+                            dark: '#1A1A1A',        /* Black */
+                            muted: '#71717A',       /* Gray */
+                            clay: '#78574E',        /* Clay Brown */
+                            clayLight: '#B0978B'    /* Lighter Clay */
+                        }
+                    },
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        serif: ["Playfair Display", "serif"],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            font-family: "Outfit", sans-serif;
+            background-color: #FFFFFF;
+            scroll-behavior: smooth;
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .breadcrumb-item:after {
+            content: '/';
+            margin: 0 10px;
+            color: #78574E;
+            opacity: 0.5;
+        }
+        .breadcrumb-item:last-child:after {
+            content: '';
+        }
+
+        .product-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image-container {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            background-color: #f8f8f8;
+        }
+
+        .product-image-secondary {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .product-card:hover .product-image-secondary {
+            opacity: 1;
+        }
+
+        .category-tab.active {
+            color: #78574E;
+            border-bottom: 2px solid #78574E;
+        }
+
+        .price-tag {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #78574E;
+        }
+
+        /* Luxury Underline Animation */
+        .luxury-link {
+            position: relative;
+            display: inline-block;
+        }
+        .luxury-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #78574E;
+            transition: width 0.3s ease;
+        }
+        .luxury-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="text-brand-dark antialiased bg-white">
+
+    <!-- ==========================================
+         TOP BAR (SYNCED)
+         ========================================== -->
+    <div class="bg-white border-b border-gray-100 py-2.5 px-4 md:px-12 text-[13px] font-medium text-gray-500 hidden lg:flex justify-between items-center z-[100] relative">
+        <div class="flex gap-8">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-brand-primary"></i>
+                +91 99900 35533
+            </span>
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-brand-primary"></i>
+                info@aastraaesthetic.clinic
+            </span>
+        </div>
+        <div class="flex gap-5 items-center">
+            <a href="https://www.facebook.com/profile.php?id=61589622653365" target="_blank" aria-label="Facebook" class="text-gray-400 hover:text-brand-clay transition text-base"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/aastra_aesthetic/" target="_blank" aria-label="Instagram" class="text-gray-400 hover:text-brand-clay transition text-base"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@AastraAesthetic" target="_blank" aria-label="YouTube" class="text-gray-400 hover:text-brand-clay transition text-base"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.google.com/search?q=Aastra+Aesthetic&stick=H4sIAAAAAAAA_-NgU1I1qDBONDAyNzdOTjMyszBINkqzMqgwTzE0MUwyTTQyNjJKS000W8Qq4JhYXFKUqOCYWlySkVqSmQwA97gaNzwAAAA&hl=en&mat=CcJmeOlogZkOElcBTVDHnkJZXYz-CXYL2cIciOvsPDV1qtgko3PYNvJPl9HzqECNSV3-3pJxtfFeQHSJgk1h9xd-J7rANeUTgmtMh_TpDcjTgdnUkIuAfG89jiSamsenrLs&authuser=0" target="_blank" aria-label="Google" class="text-gray-400 hover:text-brand-clay transition text-base"><i class="fa-brands fa-google"></i></a>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         NAVIGATION (SYNCED)
+         ========================================== -->
+    <nav class="bg-white px-4 md:px-12 py-2 flex justify-between items-center sticky top-0 z-[1000] shadow-sm">
+        <div class="flex-shrink-0">
+            <a href="index.html" class="flex items-center">
+                <img src="aastralogo.png" alt="Aastra Aesthetic" class="h-[100px] w-auto">
+            </a>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-10 text-[11px] font-bold tracking-[0.2em] text-brand-dark">
+            <a href="index.html" class="hover:text-brand-clay transition-all">HOME</a>
+            <a href="about.html" class="hover:text-brand-clay transition-all">ABOUT US</a>
+            <a href="products.html" class="text-brand-clay hover:text-brand-dark transition-all">PRODUCT</a>
+            <a href="services.html" class="hover:text-brand-clay transition-all">SERVICE</a>
+            <a href="contact.html" class="hover:text-brand-clay transition-all">CONTACT US</a>
+            <a href="blog.html" class="hover:text-brand-clay transition-all">BLOG</a>
+        </div>
+
+        <div class="flex items-center">
+            <a href="index.html#appointment" class="btn-shimmer bg-brand-clay text-white px-8 py-3.5 text-[10px] font-bold tracking-[0.2em] hover:bg-brand-dark transition-all hidden sm:block">
+                APPOINTMENT
+            </a>
+            <button id="menu-toggle" class="lg:hidden text-brand-dark ml-4">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark z-[2000] transform translate-x-full transition-transform duration-300 lg:hidden">
+            <div class="p-8 flex flex-col h-full text-white">
+                <div class="flex justify-between items-center mb-16">
+                    <img src="aastralogo.png" alt="Aastra Aesthetic" class="h-10 w-auto brightness-0 invert">
+                    <button id="menu-close" class="text-white">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-8 text-xl font-bold tracking-widest uppercase">
+                    <a href="index.html">HOME</a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="products.html" class="text-brand-secondary">PRODUCT</a>
+                    <a href="services.html">SERVICES</a>
+                    <a href="contact.html">CONTACT</a>
+                    <a href="blog.html">BLOG</a>
+                </div>
+                <div class="mt-auto">
+                    <a href="index.html#appointment" class="btn-shimmer block bg-brand-primary text-white text-center py-5 text-sm font-bold tracking-[0.2em]">APPOINTMENT</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         HERO BANNER
+         ========================================== -->
+    <section class="relative py-20 md:py-24 flex items-center justify-center text-center overflow-hidden min-h-[300px] bg-fixed bg-center bg-cover"
+             style="background-image: url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1920&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/80 via-[#1A1A1A]/70 to-[#78574E]/90"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 flex flex-col items-center">
+            <span class="text-brand-accent font-bold tracking-[0.4em] text-[11px] mb-4 block uppercase border border-brand-accent/50 py-1.5 px-5 rounded-full bg-black/20 backdrop-blur-sm" data-aos="fade-up">
+                Our Shop
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+                Skincare Products
+            </h1>
+            <div class="flex items-center justify-center gap-3 text-xs font-bold tracking-[0.2em] text-white/60 uppercase mt-2" data-aos="fade-up" data-aos-delay="200">
+                <a href="index.html" class="hover:text-brand-accent transition">Home</a>
+                <span class="text-brand-accent">-</span>
+                <span class="text-white">Shop</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SHOPPING CONTENT
+         ========================================== -->
+    <section class="py-24 px-4 md:px-12 bg-white" data-aos="fade-up">
+        <div class="container mx-auto">
+            
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 mb-20 border-b border-gray-100 pb-8" id="product-filters">
+                <button class="category-tab active text-[11px] font-bold tracking-[0.3em] uppercase transition-all pb-2" data-filter="all">All Products</button>
+                <button class="category-tab text-[11px] font-bold tracking-[0.3em] uppercase transition-all pb-2 hover:text-brand-clay" data-filter="Serums">Serums</button>
+                <button class="category-tab text-[11px] font-bold tracking-[0.3em] uppercase transition-all pb-2 hover:text-brand-clay" data-filter="Cleansers">Cleansers</button>
+                <button class="category-tab text-[11px] font-bold tracking-[0.3em] uppercase transition-all pb-2 hover:text-brand-clay" data-filter="Moisturizers">Moisturizers</button>
+                <button class="category-tab text-[11px] font-bold tracking-[0.3em] uppercase transition-all pb-2 hover:text-brand-clay" data-filter="Sun Protection">Sun Protection</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-12">
+                
+                <!-- Product 1 -->
+                <div class="product-card" data-category="Serums">
+                    <div class="product-image-container mb-6 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Product 1">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800&auto=format&fit=crop" class="product-image-secondary object-cover" alt="Product 1 Hover">
+                        <div class="absolute top-4 left-4 bg-brand-clay text-white text-[9px] font-bold px-3 py-1 uppercase tracking-widest">New</div>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase mb-2 block">Serums</span>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 uppercase tracking-tight">Advanced Vitamin C</h3>
+                        <div class="price-tag mb-6">$85.00</div>
+                        <a href="tel:+919990035533" class="luxury-link text-[10px] font-bold tracking-[0.2em] text-brand-dark uppercase">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="Cleansers">
+                    <div class="product-image-container mb-6 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Product 2">
+                        <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=800&auto=format&fit=crop" class="product-image-secondary object-cover" alt="Product 2 Hover">
+                    </div>
+                    <div class="text-center">
+                        <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase mb-2 block">Cleansers</span>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 uppercase tracking-tight">Gentle Milk Cleanser</h3>
+                        <div class="price-tag mb-6">$45.00</div>
+                        <a href="tel:+919990035533" class="luxury-link text-[10px] font-bold tracking-[0.2em] text-brand-dark uppercase">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="Moisturizers">
+                    <div class="product-image-container mb-6 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Product 3">
+                        <img src="https://images.unsplash.com/photo-1556229162-5c63ed9c4ffb?q=80&w=800&auto=format&fit=crop" class="product-image-secondary object-cover" alt="Product 3 Hover">
+                        <div class="absolute top-4 left-4 bg-brand-dark text-white text-[9px] font-bold px-3 py-1 uppercase tracking-widest">Sale</div>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase mb-2 block">Moisturizers</span>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 uppercase tracking-tight">Hydra-Silk Cream</h3>
+                        <div class="price-tag mb-6">$62.00</div>
+                        <a href="tel:+919990035533" class="luxury-link text-[10px] font-bold tracking-[0.2em] text-brand-dark uppercase">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="Serums">
+                    <div class="product-image-container mb-6 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Product 4">
+                        <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?q=80&w=800&auto=format&fit=crop" class="product-image-secondary object-cover" alt="Product 4 Hover">
+                    </div>
+                    <div class="text-center">
+                        <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase mb-2 block">Serums</span>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 uppercase tracking-tight">Retinol Night Oil</h3>
+                        <div class="price-tag mb-6">$95.00</div>
+                        <a href="tel:+919990035533" class="luxury-link text-[10px] font-bold tracking-[0.2em] text-brand-dark uppercase">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-category="Sun Protection">
+                    <div class="product-image-container mb-6 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Product 5">
+                        <img src="https://images.unsplash.com/photo-1556228448-59b85c27638c?q=80&w=800&auto=format&fit=crop" class="product-image-secondary object-cover" alt="Product 5 Hover">
+                    </div>
+                    <div class="text-center">
+                        <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase mb-2 block">Sun Protection</span>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 uppercase tracking-tight">Mineral SPF 50</h3>
+                        <div class="price-tag mb-6">$38.00</div>
+                        <a href="tel:+919990035533" class="luxury-link text-[10px] font-bold tracking-[0.2em] text-brand-dark uppercase">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-category="Cleansers">
+                    <div class="product-image-container mb-6 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Product 6">
+                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop" class="product-image-secondary object-cover" alt="Product 6 Hover">
+                    </div>
+                    <div class="text-center">
+                        <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase mb-2 block">Cleansers</span>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 uppercase tracking-tight">Exfoliating Scrub</h3>
+                        <div class="price-tag mb-6">$42.00</div>
+                        <a href="tel:+919990035533" class="luxury-link text-[10px] font-bold tracking-[0.2em] text-brand-dark uppercase">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card" data-category="Moisturizers">
+                    <div class="product-image-container mb-6 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Product 7">
+                        <img src="https://images.unsplash.com/photo-1556228850-d8e390c58f0c?q=80&w=800&auto=format&fit=crop" class="product-image-secondary object-cover" alt="Product 7 Hover">
+                    </div>
+                    <div class="text-center">
+                        <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase mb-2 block">Moisturizers</span>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 uppercase tracking-tight">Night Repair Balm</h3>
+                        <div class="price-tag mb-6">$78.00</div>
+                        <a href="tel:+919990035533" class="luxury-link text-[10px] font-bold tracking-[0.2em] text-brand-dark uppercase">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card" data-category="Serums">
+                    <div class="product-image-container mb-6 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Product 8">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800&auto=format&fit=crop" class="product-image-secondary object-cover" alt="Product 8 Hover">
+                    </div>
+                    <div class="text-center">
+                        <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase mb-2 block">Serums</span>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 uppercase tracking-tight">Hyaluronic Booster</h3>
+                        <div class="price-tag mb-6">$75.00</div>
+                        <a href="tel:+919990035533" class="luxury-link text-[10px] font-bold tracking-[0.2em] text-brand-dark uppercase">Shop Now</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-24 flex justify-center items-center gap-5">
+                <a href="products.html" class="w-14 h-14 border border-[#78574E] bg-[#78574E] text-white flex items-center justify-center text-[13px] font-bold transition-all shadow-md">01</a>
+                <a href="products.html" class="w-14 h-14 border border-[#78574E]/30 text-brand-dark flex items-center justify-center text-[13px] font-bold hover:bg-[#78574E] hover:text-white hover:border-[#78574E] transition-all">02</a>
+                <a href="products.html" class="w-14 h-14 border border-[#78574E]/30 text-brand-dark flex items-center justify-center text-[13px] font-bold hover:bg-[#78574E] hover:text-white hover:border-[#78574E] transition-all">03</a>
+                <a href="products.html" class="ml-6 text-[12px] font-bold tracking-[0.25em] text-[#78574E] uppercase flex items-center gap-3 group hover:text-brand-dark transition-colors">
+                    Next <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         NEWSLETTER SECTION (PARALLAX CTA)
+         ========================================== -->
+    <section class="py-32 relative flex items-center justify-center text-center overflow-hidden parallax-section" data-aos="fade-up">
+        <!-- Parallax Background Image -->
+        <div class="absolute inset-0 -z-10 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1920&auto=format&fit=crop" 
+                 class="absolute w-full h-[150%] object-cover top-[-25%] left-0 parallax-bg transition-transform duration-75 ease-out" alt="Parallax Background">
+        </div>
+        
+        <!-- Light overlay for text readability but letting the image show through -->
+        <div class="absolute inset-0 bg-[#FFF5F0]/65 backdrop-blur-[2px] z-0"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-8 text-brand-dark font-serif">Ready to Transform Your Skin?</h2>
+            <p class="text-brand-dark/80 mb-12 max-w-xl mx-auto text-sm md:text-base leading-relaxed font-light">
+                Schedule a consultation with our experts today and discover the perfect skincare regimen tailored to your unique needs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="contact.html" class="btn-shimmer bg-brand-clay text-white px-10 py-4 text-[11px] font-bold tracking-[0.2em] hover:bg-brand-dark transition-all shadow-xl uppercase w-full sm:w-auto">
+                    Contact Us
+                </a>
+                <a href="tel:+919990035533" class="btn-shimmer bg-white text-brand-dark border border-brand-dark px-10 py-4 text-[11px] font-bold tracking-[0.2em] hover:bg-brand-dark hover:text-white transition-all shadow-xl uppercase w-full sm:w-auto flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER (SYNCED)
+         ========================================== -->
+    <footer class="luxury-footer-bg pt-16 pb-6 text-white/90 relative overflow-hidden">
+        <!-- Elegant Background curves in Gold Outline -->
+        <div class="absolute inset-0 pointer-events-none opacity-[0.03]">
+            <svg class="w-full h-full" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-100 700 C 300 600, 450 850, 1000 650 C 1200 570, 1400 710, 1600 680" stroke="#D4AF37" stroke-width="1.5" />
+                <path d="M-50 500 C 400 450, 600 700, 1100 520 C 1300 450, 1500 550, 1700 500" stroke="#D4AF37" stroke-width="1" />
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-20 mb-12">
+                
+                <!-- Column 1: Brand & Philosophy -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <a href="index.html" class="group block mb-8">
+                        <img src="aastralogo.png" alt="Aastra Aesthetic" class="h-24 w-auto mb-8 brightness-0 invert group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                    <p class="text-sm font-light leading-relaxed text-white/90 mb-10 max-w-sm">
+                        Providing bespoke clinical cosmetology and cosmetologist-backed skincare systems. Experience clinical precision infused with absolute luxury care.
+                    </p>
+                    <!-- Social icons -->
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/profile.php?id=61589622653365" target="_blank"
+                            class="w-10 h-10 rounded-full luxury-glass-badge flex items-center justify-center text-white hover:text-white"
+                            aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f text-xs"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aastra_aesthetic/" target="_blank"
+                            class="w-10 h-10 rounded-full luxury-glass-badge flex items-center justify-center text-white hover:text-white"
+                            aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-xs"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@AastraAesthetic" target="_blank"
+                            class="w-10 h-10 rounded-full luxury-glass-badge flex items-center justify-center text-white hover:text-white"
+                            aria-label="YouTube">
+                            <i class="fa-brands fa-youtube text-xs"></i>
+                        </a>
+                        <a href="https://www.google.com/search?q=Aastra+Aesthetic&stick=H4sIAAAAAAAA_-NgU1I1qDBONDAyNzdOTjMyszBINkqzMqgwTzE0MUwyTTQyNjJKS000W8Qq4JhYXFKUqOCYWlySkVqSmQwA97gaNzwAAAA&hl=en&mat=CcJmeOlogZkOElcBTVDHnkJZXYz-CXYL2cIciOvsPDV1qtgko3PYNvJPl9HzqECNSV3-3pJxtfFeQHSJgk1h9xd-J7rANeUTgmtMh_TpDcjTgdnUkIuAfG89jiSamsenrLs&authuser=0" target="_blank"
+                            class="w-10 h-10 rounded-full luxury-glass-badge flex items-center justify-center text-white hover:text-white"
+                            aria-label="Google">
+                            <i class="fa-brands fa-google text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Expert Treatments -->
+                <div>
+                    <h4 class="text-white font-serif font-bold text-lg mb-8 tracking-wide relative inline-block">
+                        Treatments
+                        <span class="absolute bottom-[-6px] left-0 w-8 h-[1px] bg-brand-accent"></span>
+                    </h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a href="services.html" class="footer-link">Skin Treatment & Hydration</a></li>
+                        <li><a href="services.html" class="footer-link">Rhinoplasty (Nose Surgery)</a></li>
+                        <li><a href="services.html" class="footer-link">Cosmetic Surgery</a></li>
+                        <li><a href="services.html" class="footer-link">Double Chin Removal</a></li>
+                        <li><a href="services.html" class="footer-link">Laser Hair Removal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Navigation -->
+                <div>
+                    <h4 class="text-white font-serif font-bold text-lg mb-8 tracking-wide relative inline-block">
+                        Explore
+                        <span class="absolute bottom-[-6px] left-0 w-8 h-[1px] bg-brand-accent"></span>
+                    </h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="products.html" class="footer-link">Boutique Products</a></li>
+                        <li><a href="services.html" class="footer-link">Treatments & Services</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                        <li><a href="blog.html" class="footer-link">Our Journal (Blog)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Premium Subscription -->
+                <div>
+                    <span class="text-[9px] font-bold tracking-[0.3em] uppercase text-white block mb-3">Newsletter</span>
+                    <h4 class="text-white font-serif text-2xl font-semibold mb-8 uppercase tracking-wide leading-tight">
+                        GET IN <br> TOUCH
+                    </h4>
+                    
+                    <!-- Interactive Glassmorphic Form -->
+                    <div class="relative footer-input-wrapper flex items-center">
+                        <input type="email" placeholder=" " id="footer-newsletter-email" class="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-brand-accent text-sm text-white placeholder:opacity-0 transition-colors duration-300">
+                        <label for="footer-newsletter-email" class="absolute left-0 top-4 text-white text-sm pointer-events-none transition-all duration-300 transform origin-left">Your Email</label>
+                        <button class="absolute right-0 top-1/2 -translate-y-1/2 text-white hover:text-brand-accent hover:translate-x-1.5 transition-all duration-300" aria-label="Subscribe">
+                            <i class="fa-solid fa-paper-plane text-lg"></i>
+                        </button>
+                    </div>
+                    <p class="text-[10px] text-white mt-3 font-light">Join our circle for priority slots and curated skin guides.</p>
+                </div>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="w-full h-[1px] bg-white/10 mb-12"></div>
+
+            <!-- Bottom Row: Copyright & Credits -->
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <!-- Left: Copyright -->
+                <p class="text-xs text-white/90 text-center sm:text-left font-light">
+                    © 2026 Aastra Aesthetic By Sania. All Rights Reserved.
+                </p>
+                <!-- Right: Credits -->
+                <p class="text-xs text-white/90 text-center sm:text-right font-light">
+                    Designed and developed by <a href="https://goadslive.in/" target="_blank" class="text-brand-accent hover:text-white transition-colors">goadslive</a>
+                </p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById("menu-toggle");
+        const menuClose = document.getElementById("menu-close");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (menuToggle && mobileMenu) menuToggle.addEventListener("click", () => mobileMenu.classList.remove("translate-x-full"));
+        if (menuClose && mobileMenu) menuClose.addEventListener("click", () => mobileMenu.classList.add("translate-x-full"));
+
+        // Buttery-smooth Viewport-relative Parallax
+        const parallaxSection = document.querySelector('.parallax-section');
+        const parallaxBg = document.querySelector('.parallax-bg');
+        if (parallaxSection && parallaxBg) {
+            window.addEventListener('scroll', () => {
+                const sectionTop = parallaxSection.getBoundingClientRect().top;
+                const val = -sectionTop * 0.12; // speed factor
+                parallaxBg.style.transform = `translate3d(0, ${val}px, 0)`;
+            });
+        }
+    </script>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50,
+        });
+    </script>
+    <!-- Product Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('#product-filters .category-tab');
+            const products = document.querySelectorAll('.product-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active state from all
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active state to clicked
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    products.forEach(product => {
+                        if (filterValue === 'all' || product.getAttribute('data-category') === filterValue) {
+                            product.style.display = 'block';
+                        } else {
+                            product.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

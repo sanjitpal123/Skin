@@ -1,0 +1,300 @@
+/* Custom CSS Styles */
+
+/* ==========================================
+   SHIMMER BUTTON
+   ========================================== */
+.btn-shimmer {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 !important; /* Square button as requested */
+}
+
+/* The animated shimmer sweep */
+.btn-shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: none;
+}
+
+/* Shimmer trigger on hover */
+.btn-shimmer:hover::after {
+    animation: shimmer-effect 0.8s ease-in-out;
+}
+
+@keyframes shimmer-effect {
+    100% {
+        left: 150%;
+    }
+}
+
+/* ==========================================
+   PREMIUM GEOMETRIC BACKGROUND PATTERNS
+   ========================================== */
+
+/* Hexagon lattice - represents molecular precision and dermal cell structure */
+.bg-hex {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='100' viewBox='0 0 88 100'%3E%3Cpath d='M44 0l44 25.4v50.8L44 100 0 76.2V25.4L44 0zm0 4.6L4 27.7v44.6l40 23.1 40-23.1V27.7L44 4.6z' fill='%23D4AF37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Luxury diamond lattice - represents prestige, luxury clinical care, and brilliance */
+.bg-diamonds {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z' fill='none' stroke='%23D4AF37' stroke-width='1' stroke-opacity='0.09'/%3E%3C/svg%3E");
+}
+
+/* Skincare harmony rings - represents cellular regeneration, hydration, and soft skin curves */
+.bg-circles {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='36' fill='none' stroke='%23D4AF37' stroke-width='1' stroke-opacity='0.09'/%3E%3Ccircle cx='40' cy='40' r='20' fill='none' stroke='%23D4AF37' stroke-width='1' stroke-opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Elegant micro waves - represents gentle hydration, liquid textures, and skin vitality */
+.bg-waves {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='30' viewBox='0 0 60 30'%3E%3Cpath d='M0 15 Q 15 5, 30 15 T 60 15' fill='none' stroke='%23D4AF37' stroke-width='1' stroke-opacity='0.09'/%3E%3C/svg%3E");
+}
+
+/* Premium Smooth Parallax Effect */
+.luxury-parallax {
+    background-attachment: fixed !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+/* ==========================================
+   INTERACTIVE BEFORE & AFTER SLIDER
+   ========================================== */
+.ba-slider {
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: col-resize;
+}
+
+.ba-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ffffff;
+    cursor: ew-resize;
+    z-index: 20;
+    transform: translateX(-50%);
+    pointer-events: auto;
+}
+
+.ba-handle::after {
+    content: "↔";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background-color: #ffffff;
+    color: #78574e;
+    border: 2px solid #78574e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ba-slider:hover .ba-handle::after {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: #78574e;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* ==========================================
+   PREMIUM LUXURY FOOTER CUSTOM STYLES
+   ========================================== */
+
+/* Dark, rich, luxury editorial gradient */
+.luxury-footer-bg {
+    background: #78574E;
+    position: relative;
+}
+
+/* Link hover line reveal with elegant easing */
+.footer-link {
+    position: relative;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.95);
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #D4AF37; /* Gold accent */
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* Luxury micro-glassmorphic badge styling */
+.luxury-glass-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.luxury-glass-badge:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #D4AF37;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15);
+}
+
+/* Floating Input Label Transitions */
+.footer-input-wrapper {
+    position: relative;
+}
+
+.footer-input-wrapper input:focus ~ label,
+.footer-input-wrapper input:not(:placeholder-shown) ~ label {
+    transform: translateY(-26px) scale(0.85);
+    color: #D4AF37;
+    opacity: 0.9;
+}
+
+/* ==========================================
+   RESPONSIVE STYLES — MOBILE FIRST
+   ========================================== */
+
+/* Tablets and below (< 1024px) */
+@media (max-width: 1023px) {
+    /* Mission/Vision overlay: stack vertically */
+    .mission-vision-container {
+        position: relative !important;
+        transform: none !important;
+        flex-direction: column;
+        margin-top: 1.5rem;
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+    .mv-divider {
+        width: 80%;
+        height: 1px;
+        border-left: none;
+        border-top: 2px dotted #8b4513;
+        margin: 0 auto;
+    }
+
+    .mv-box {
+        padding: 2rem 1.5rem;
+    }
+
+    .mv-title {
+        font-size: 1.25rem;
+    }
+
+    /* Doctor badge: smaller and repositioned */
+    .doctor-badge-container {
+        right: 10px !important;
+        top: 15% !important;
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .circular-text span {
+        transform-origin: 0 40px;
+        font-size: 7px;
+    }
+
+    .badge-center-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+
+    /* Doctor quote box: inline flow */
+    .doctor-quote-box {
+        position: relative !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        max-width: 100% !important;
+        margin-top: -2rem;
+        padding: 1.5rem;
+    }
+
+    /* University logos: stack vertically */
+    .univ-logo-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+}
+
+/* Mobile phones (< 768px) */
+@media (max-width: 767px) {
+    /* Prevent horizontal overflow */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Footer: tighter spacing */
+    .luxury-footer-bg {
+        padding-top: 3rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Floating buttons: smaller */
+    .float-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .floating-buttons {
+        right: 12px;
+        bottom: 20px;
+        gap: 10px;
+    }
+}
+
+/* Very small phones (< 375px) */
+@media (max-width: 374px) {
+    .mv-title {
+        font-size: 1rem;
+    }
+
+    .mv-text {
+        font-size: 11px;
+    }
+
+    .mv-icon-bg {
+        font-size: 5rem !important;
+    }
+}

@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Aastra Aesthetic By Sania - Premium Skin & Aesthetic Clinic</title>
+
+    <!-- ExternalF Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#B8860B',     /* Dark Goldenrod */
+                            secondary: '#FFFFFF',   /* Pure White */
+                            accent: '#D4AF37',      /* Classic Gold */
+                            dark: '#1A1A1A',        /* Black */
+                            muted: '#71717A',       /* Gray */
+                            clay: '#78574E',        /* Clay Brown */
+                            clayLight: '#B0978B'    /* Lighter Clay */
+                        }
+                    },
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        serif: ["Playfair Display", "serif"],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+
+        body {
+            font-family: "Outfit", sans-serif;
+            background-color: #FFFFFF;
+            scroll-behavior: smooth;
+        }
+
+        .font-serif {
+            font-family: "Playfair Display", serif;
+        }
+
+        .breadcrumb-item:after {
+            content: "/";
+            margin: 0 10px;
+            color: #c5a059;
+        }
+
+        .breadcrumb-item:last-child:after {
+            content: "";
+        }
+
+        /* Stats divider */
+        .stats-divider {
+            width: 1px;
+            height: 40px;
+            background-color: #e5e7eb;
+        }
+
+        /* Floating Action Buttons */
+        .floating-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .float-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            color: white;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .float-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .whatsapp-btn {
+            background-color: #25d366;
+        }
+
+
+        .aastra-logo {
+            font-family: "Playfair Display", serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -1px;
+        }
+
+        /* New Facilities Section Styles */
+        .facility-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .facility-line {
+            width: 40px;
+            height: 2px;
+            background-color: #1a1a1a;
+            opacity: 0.8;
+        }
+
+        .mission-vision-container {
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            right: 5%;
+            transform: translateY(50%);
+            display: flex;
+            background-color: white;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+            z-index: 20;
+        }
+
+        .mv-box {
+            flex: 1;
+            padding: 3.5rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mv-divider {
+            width: 1px;
+            border-left: 2px dotted #8b4513;
+            opacity: 0.3;
+            margin: 2rem 0;
+        }
+
+        .mv-icon-bg {
+            position: absolute;
+            right: -10px;
+            bottom: -10px;
+            opacity: 0.04;
+            font-size: 10rem;
+            transform: rotate(-10deg);
+            pointer-events: none;
+            color: #000;
+        }
+
+        .mv-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #000;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .mv-text {
+            font-size: 13px;
+            color: #333;
+            line-height: 1.6;
+            max-width: 280px;
+        }
+
+        .wavy-line {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.15;
+        }
+
+        .wavy-line-1 {
+            top: 20%;
+            left: -5%;
+            width: 300px;
+        }
+
+        .wavy-line-2 {
+            bottom: 10%;
+            right: -5%;
+            width: 400px;
+        }
+
+        /* Doctor Profile Specific Styles */
+        .doctor-badge-container {
+            position: absolute;
+            top: 25%;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            z-index: 10;
+        }
+
+        .circular-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: rotateText 20s linear infinite;
+        }
+
+        @keyframes rotateText {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .circular-text span {
+            position: absolute;
+            left: 50%;
+            transform-origin: 0 60px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+        }
+
+        .badge-center-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #c5a059;
+            font-size: 1.2rem;
+        }
+
+        .doctor-quote-box {
+            position: absolute;
+            bottom: 40px;
+            left: -30px;
+            background-color: white;
+            padding: 2.5rem;
+            max-width: 380px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            z-index: 10;
+        }
+
+        .univ-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .univ-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .univ-logo {
+            width: 45px;
+            height: auto;
+            filter: grayscale(1);
+            opacity: 0.8;
+        }
+
+        /* Hero Redesign Styles */
+        .hero-peach-bg {
+            background-color: #FDF2F0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100 L50 80 L100 100' fill='none' stroke='%23EF4444' stroke-width='0.5' stroke-opacity='0.1'/%3E%3C/svg%3E");
+            background-position: bottom;
+            background-repeat: repeat-x;
+        }
+
+        .hero-leaf {
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            width: 150px;
+            opacity: 0.15;
+            transform: rotate(-15deg);
+        }
+
+        .arch-frame {
+            clip-path: ellipse(50% 80% at 50% 80%);
+            border-radius: 200px 200px 0 0;
+            overflow: hidden;
+            border: 2px solid #FDF2F0;
+        }
+
+        .u-frame {
+            border-radius: 0 0 200px 200px;
+            overflow: hidden;
+            border: 2px solid #FDF2F0;
+        }
+
+        .floral-icon {
+            width: 40px;
+            height: 40px;
+            color: #E2725B;
+        }
+    </style>
+</head>
+
+<body class="text-brand-dark antialiased">
+    <!-- ==========================================
+         TOP BAR
+         ========================================== -->
+    <div
+        class="bg-white border-b border-gray-100 py-2.5 px-4 md:px-12 text-[13px] font-medium text-gray-500 hidden lg:flex justify-between items-center z-[100] relative">
+        <div class="flex gap-8">
+            <span class="flex items-center gap-2">
+                <svg class="w-3.5 h-3.5 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
+                    </path>
+                </svg>
+                +91 99900 35533
+            </span>
+            <span class="flex items-center gap-2">
+                <svg class="w-3.5 h-3.5 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 012 2h12a2 2 0 012-2V8.118z"></path>
+                </svg>
+                info@aastraaesthetic.clinic
+            </span>
+        </div>
+        <div class="flex gap-5 items-center">
+            <a href="https://www.facebook.com/profile.php?id=61589622653365" target="_blank" aria-label="Facebook" class="text-gray-400 hover:text-brand-primary transition text-base"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/aastra_aesthetic/" target="_blank" aria-label="Instagram" class="text-gray-400 hover:text-brand-primary transition text-base"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@AastraAesthetic" target="_blank" aria-label="YouTube" class="text-gray-400 hover:text-brand-primary transition text-base"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.google.com/search?q=Aastra+Aesthetic&stick=H4sIAAAAAAAA_-NgU1I1qDBONDAyNzdOTjMyszBINkqzMqgwTzE0MUwyTTQyNjJKS000W8Qq4JhYXFKUqOCYWlySkVqSmQwA97gaNzwAAAA&hl=en&mat=CcJmeOlogZkOElcBTVDHnkJZXYz-CXYL2cIciOvsPDV1qtgko3PYNvJPl9HzqECNSV3-3pJxtfFeQHSJgk1h9xd-J7rANeUTgmtMh_TpDcjTgdnUkIuAfG89jiSamsenrLs&authuser=0" target="_blank" aria-label="Google" class="text-gray-400 hover:text-brand-primary transition text-base"><i class="fa-brands fa-google"></i></a>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         NAVIGATION
+         ========================================== -->
+    <nav class="bg-white px-4 md:px-12 py-2 flex justify-between items-center sticky top-0 z-[1000] shadow-sm">
+        <!-- Left: Logo -->
+        <div class="flex-shrink-0">
+            <a href="index.html" class="flex items-center">
+                <img src="aastralogo.png" alt="Aastra Aesthetic" class="h-[100px] w-auto">
+            </a>
+        </div>
+
+        <!-- Center: Desktop Menu -->
+        <div class="hidden lg:flex items-center gap-10 text-[11px] font-bold tracking-[0.2em] text-brand-dark">
+            <a href="index.html" class="hover:text-brand-clay transition-all">HOME</a>
+            <a href="about.html" class="hover:text-brand-clay transition-all">ABOUT US</a>
+            <a href="products.html" class="hover:text-brand-clay transition-all">PRODUCT</a>
+            <a href="services.html" class="hover:text-brand-clay transition-all">SERVICE</a>
+            <a href="contact.html" class="hover:text-brand-clay transition-all">CONTACT US</a>
+            <a href="blog.html" class="hover:text-brand-clay transition-all">BLOG</a>
+        </div>
+
+        <!-- Right: CTA Button -->
+        <div class="flex items-center">
+            <a href="index.html#appointment"
+                class="btn-shimmer bg-brand-clay text-white px-8 py-3.5 text-[10px] font-bold tracking-[0.2em] hover:bg-brand-dark transition-all hidden sm:block">
+                APPOINTMENT
+            </a>
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="lg:hidden text-brand-dark ml-4">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-brand-dark z-[2000] transform translate-x-full transition-transform duration-300 lg:hidden">
+            <div class="p-8 flex flex-col h-full">
+                <div class="flex justify-between items-center mb-16">
+                    <img src="aastralogo.png" alt="Aastra Aesthetic" class="h-10 w-auto brightness-0 invert">
+                    <button id="menu-close" class="text-white">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-8 text-xl font-bold tracking-widest uppercase text-white">
+                    <a href="index.html">HOME</a>
+                    <a href="about.html">ABOUT US</a>
+                    <a href="products.html">PRODUCT</a>
+                    <a href="services.html">SERVICE</a>
+                    <a href="contact.html">CONTACT US</a>
+                    <a href="blog.html">BLOG</a>
+                </div>
+                <div class="mt-auto">
+                    <a href="index.html#appointment"
+                        class="btn-shimmer block bg-brand-primary text-white text-center py-5 text-sm font-bold tracking-[0.2em]">APPOINTMENT</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         HERO BANNER
+         ========================================== -->
+    <section
+        class="relative pt-24 pb-16 md:pt-36 md:pb-24 flex items-center justify-center text-center overflow-hidden min-h-[400px] bg-fixed bg-center bg-cover"
+        style="background-image: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1920&auto=format&fit=crop');">
+        <!-- Dark gradient overlay for text readability and premium feel -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/80 via-[#1A1A1A]/70 to-[#78574E]/90"></div>
+
+        <div class="container mx-auto px-4 relative z-10 flex flex-col items-center">
+            <span
+                class="text-brand-accent font-bold tracking-[0.4em] text-[11px] mb-6 block uppercase border border-brand-accent/50 py-2 px-6 rounded-full bg-black/20 backdrop-blur-sm"
+                data-aos="fade-up">
+                About Us
+            </span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-tight" data-aos="fade-up"
+                data-aos-delay="100">
+                Aastra skin & <br><span class="text-[#78574E] italic">beauty</span>
+            </h1>
+            <p class="text-white/80 text-base md:text-lg leading-relaxed font-light mb-8 max-w-2xl text-center mx-auto"
+                data-aos="fade-up" data-aos-delay="200">
+                Our expert team is dedicated to providing top-quality services that leave you feeling confident,
+                refreshed, and glowing.
+            </p>
+
+            <!-- Breadcrumbs -->
+            <div
+                class="flex items-center justify-center gap-3 text-xs font-bold tracking-[0.2em] text-white/60 uppercase mt-2">
+                <a href="index.html" class="hover:text-brand-accent transition">Home</a>
+                <span class="text-brand-accent">-</span>
+                <span class="text-white">About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FACILITIES SECTION (REDESIGNED)
+         ========================================== -->
+    <section class="py-16 md:py-32 bg-brand-secondary relative overflow-hidden" data-aos="fade-up">
+        <!-- Decorative Wavy Lines -->
+        <div class="wavy-line wavy-line-1">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" stroke="#E2725B" stroke-width="0.5"
+                    d="M 0,100 C 20,80 40,80 60,100 C 80,120 100,120 120,100 C 140,80 160,80 180,100" />
+                <path fill="none" stroke="#E2725B" stroke-width="0.5"
+                    d="M 0,120 C 20,100 40,100 60,120 C 80,140 100,140 120,120 C 140,100 160,100 180,120" />
+            </svg>
+        </div>
+        <div class="wavy-line wavy-line-2">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" stroke="#E2725B" stroke-width="0.5"
+                    d="M 0,100 C 20,80 40,80 60,100 C 80,120 100,120 120,100 C 140,80 160,80 180,100" />
+                <path fill="none" stroke="#C5A059" stroke-width="0.5"
+                    d="M 0,110 C 30,80 60,140 90,110 C 120,80 150,140 180,110" />
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-4 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
+            <div>
+                <span
+                    class="text-[#8B4513] font-bold tracking-[0.3em] text-[10px] mb-4 block uppercase">Facilities</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-10 leading-[1.1] text-brand-dark">
+                    KNOW WHAT FACILITIES WE HAVE
+                </h2>
+                <p class="text-gray-600 mb-12 leading-relaxed text-lg max-w-xl">
+                    At Aastra Aesthetic, we boast state-of-the-art diagnostic and clinical equipment to provide highly safe, precise, and effective skincare procedures. Our elegant clinic is fully equipped to meet your beauty goals in a safe, professional, and tranquil environment.
+                </p>
+
+                <div class="mb-14">
+                    <div class="facility-item">
+                        <div class="facility-line"></div>
+                        <span class="font-bold tracking-widest text-sm uppercase text-brand-dark">Excellent
+                            Laboratory</span>
+                    </div>
+                    <div class="facility-item">
+                        <div class="facility-line"></div>
+                        <span class="font-bold tracking-widest text-sm uppercase text-brand-dark">World Class
+                            Infrastructure</span>
+                    </div>
+                    <div class="facility-item">
+                        <div class="facility-line"></div>
+                        <span class="font-bold tracking-widest text-sm uppercase text-brand-dark">Pharmacy</span>
+                    </div>
+                    <div class="facility-item">
+                        <div class="facility-line"></div>
+                        <span class="font-bold tracking-widest text-sm uppercase text-brand-dark">Cosmetic
+                            Surgeons</span>
+                    </div>
+                    <div class="facility-item">
+                        <div class="facility-line"></div>
+                        <span class="font-bold tracking-widest text-sm uppercase text-brand-dark">Health Checkups</span>
+                    </div>
+                </div>
+
+                <a href="index.html#appointment"
+                    class="btn-shimmer bg-[#5D3434] text-white px-12 py-5 text-[11px] font-bold tracking-[0.2em] hover:bg-opacity-90 transition-all inline-block uppercase">
+                    Book Appointment
+                </a>
+            </div>
+
+            <div class="relative pb-24 lg:pb-0">
+                <div class="relative rounded-sm overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1200&auto=format&fit=crop"
+                        class="w-full h-[350px] md:h-[500px] lg:h-[650px] object-cover" alt="Premium Facilities" />
+                    <div class="absolute inset-0 bg-black/5"></div>
+                </div>
+
+                <!-- Mission & Vision Overlay (Exact Design) -->
+                <div class="mission-vision-container">
+                    <div class="mv-box">
+                        <p class="mv-text">
+                            To empower individuals by delivering customized aesthetic solutions backed by advanced clinical science and ethical care.
+                        </p>
+                        <h4 class="mv-title">OUR MISSION</h4>
+                        <i class="fas fa-mountain mv-icon-bg"></i>
+                    </div>
+
+                    <div class="mv-divider"></div>
+
+                    <div class="mv-box">
+                        <p class="mv-text">
+                            To be recognized as the premier destination for cosmetic cosmetology, offering cutting-edge therapies and absolute luxury care.
+                        </p>
+                        <h4 class="mv-title">OUR VISION</h4>
+                        <i class="fas fa-binoculars mv-icon-bg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+          OFFERINGS SECTION (MATCH HOME PAGE)
+          ========================================== -->
+    <section class="py-24 bg-[#F9F5F3]" data-aos="fade-up">
+        <div class="container mx-auto px-4 md:px-12">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-end text-center md:text-left mb-24 gap-8">
+                <div class="max-w-2xl mx-auto md:mx-0">
+                    <span class="text-[#8B4513] font-bold tracking-[0.3em] text-[10px] mb-4 block uppercase">Our
+                        Services</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6 tracking-tight uppercase">KNOW WHAT
+                        WE OFFER</h2>
+                    <p class="text-gray-500 text-sm md:text-base leading-relaxed font-light">
+                        Experience the gold standard in cosmetic cosmetology. Discover our range of specialized clinical and aesthetic treatments designed to highlight your natural radiance.
+                    </p>
+                </div>
+                <!-- Navigation Arrow -->
+                <div class="hidden md:flex">
+                    <div
+                        class="w-16 h-16 rounded-full bg-brand-clay/10 border border-brand-clay/20 flex items-center justify-center text-brand-clay cursor-pointer hover:bg-brand-clay hover:text-white transition-all group">
+                        <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-8 md:gap-y-16">
+                <!-- Service 01 -->
+                <div
+                    class="relative group transform lg:translate-y-12 transition-transform hover:-translate-y-2 duration-500 text-center sm:text-left">
+                    <div class="relative overflow-hidden mb-8 aspect-[4/5] shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Rhinoplasty">
+                    </div>
+                    <div class="flex justify-center sm:justify-start items-baseline gap-4">
+                        <span
+                            class="text-6xl md:text-7xl font-bold text-brand-clay/10 tracking-tighter leading-none">01</span>
+                        <h3 class="text-xs md:text-sm font-bold tracking-[0.2em] text-brand-dark uppercase">Rhinoplasty
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Service 02 -->
+                <div class="relative group transition-transform hover:-translate-y-2 duration-500 text-center sm:text-left">
+                    <div class="relative overflow-hidden mb-8 aspect-[4/5] shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Skin Treatment">
+                    </div>
+                    <div class="flex justify-center sm:justify-start items-baseline gap-4">
+                        <span
+                            class="text-6xl md:text-7xl font-bold text-brand-clay/10 tracking-tighter leading-none">02</span>
+                        <h3 class="text-xs md:text-sm font-bold tracking-[0.2em] text-brand-dark uppercase">Skin
+                            Treatment</h3>
+                    </div>
+                </div>
+
+                <!-- Service 03 -->
+                <div
+                    class="relative group transform lg:translate-y-12 transition-transform hover:-translate-y-2 duration-500 text-center sm:text-left">
+                    <div class="relative overflow-hidden mb-8 aspect-[4/5] shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Double Chin Removal">
+                    </div>
+                    <div class="flex justify-center sm:justify-start items-baseline gap-4">
+                        <span
+                            class="text-6xl md:text-7xl font-bold text-brand-clay/10 tracking-tighter leading-none">03</span>
+                        <h3 class="text-xs md:text-sm font-bold tracking-[0.2em] text-brand-dark uppercase">Double Chin
+                            Removal</h3>
+                    </div>
+                </div>
+
+                <!-- Service 04 -->
+                <div class="relative group transition-transform hover:-translate-y-2 duration-500 text-center sm:text-left">
+                    <div class="relative overflow-hidden mb-8 aspect-[4/5] shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Cosmetic Surgery">
+                    </div>
+                    <div class="flex justify-center sm:justify-start items-baseline gap-4">
+                        <span
+                            class="text-6xl md:text-7xl font-bold text-brand-clay/10 tracking-tighter leading-none">04</span>
+                        <h3 class="text-xs md:text-sm font-bold tracking-[0.2em] text-brand-dark uppercase">Cosmetic
+                            Surgery</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         BOOKING STRIP (REDESIGNED)
+         ========================================== -->
+    <div class="bg-[#78574E] py-14 relative overflow-hidden">
+        <div
+            class="container mx-auto px-4 md:px-12 flex flex-col lg:flex-row justify-between items-center gap-12 relative z-10">
+            <!-- Left: Support -->
+            <div class="flex items-center gap-6">
+                <div class="text-white/80 text-4xl">
+                    <i class="far fa-comments"></i>
+                </div>
+                <div>
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-white/60 block uppercase mb-1">Get
+                        Support</span>
+                    <a href="mailto:info@aastraaesthetic.clinic"
+                        class="text-xs sm:text-base md:text-lg font-bold text-white tracking-wider sm:tracking-widest uppercase hover:text-brand-accent transition break-all sm:break-normal">info@aastraaesthetic.clinic</a>
+                </div>
+            </div>
+
+            <!-- Center: Booking Text -->
+            <div class="flex items-center gap-8 flex-1 justify-center">
+                <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-white tracking-widest uppercase">
+                    Book Your Slot Today
+                </h3>
+                <div class="hidden md:block h-[1px] bg-white/20 flex-1 max-w-[150px]"></div>
+            </div>
+
+            <!-- Right: CTA Button -->
+            <a href="contact.html"
+                class="btn-shimmer bg-white text-[#78574E] px-8 md:px-12 py-4 md:py-5 text-[11px] font-bold tracking-[0.3em] hover:bg-brand-dark hover:text-white transition-all shadow-2xl uppercase w-full sm:w-auto text-center">
+                Book Appointment
+            </a>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         DOCTOR PROFILE (REDESIGNED)
+         ========================================== -->
+    <section class="pt-20 md:pt-44 pb-0 bg-brand-secondary relative overflow-hidden" data-aos="fade-up">
+        <!-- Decorative Wavy Lines -->
+        <div class="wavy-line wavy-line-1 opacity-10">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" stroke="#E2725B" stroke-width="0.5" d="M 0,50 Q 50,0 100,50 T 200,50" />
+            </svg>
+        </div>
+        <div class="wavy-line wavy-line-2 opacity-10">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" stroke="#E2725B" stroke-width="0.5" d="M 0,150 Q 50,100 100,150 T 200,150" />
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-4 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-end">
+            <!-- Left: Image & Badge -->
+            <div class="relative">
+                <div class="relative z-0">
+                    <img src="doctorimage1.png" class="w-full h-[400px] md:h-[550px] lg:h-[700px] object-cover object-top" alt="Dr. Sania Hussian" />
+                </div>
+
+                <!-- Rotating Badge -->
+                <div class="doctor-badge-container">
+                    <div class="circular-text" id="circular-text">
+                        <!-- Characters will be injected by JS or hardcoded -->
+                    </div>
+                    <div class="badge-center-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                </div>
+
+                <!-- Quote Box -->
+                <div class="doctor-quote-box">
+                    <p class="text-sm leading-relaxed text-gray-700">
+                        At Aastra Aesthetic, <span class="font-bold text-[#8B4513]">Dr. Sania Hussian</span> and her team combine scientific expertise with absolute clinical precision to deliver results that make you look and feel like the <span class="font-bold text-[#8B4513]">Best Version of Yourself</span>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right: Info -->
+            <div class="relative z-10 pb-24">
+                <span class="text-[#8B4513] font-bold tracking-[0.3em] text-[10px] mb-4 block uppercase">Clinical Cosmetologist</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 text-brand-dark uppercase">
+                    Sania Hussian
+                </h2>
+                <p class="text-gray-600 mb-12 leading-relaxed text-lg max-w-xl">
+                    Dedicated to providing top-quality clinical cosmetology and aesthetic medicine treatments tailored to your unique skin.
+                </p>
+
+                <div class="space-y-6 mb-12">
+                    <div class="facility-item">
+                        <div class="facility-line"></div>
+                        <span class="font-bold tracking-widest text-sm uppercase text-brand-dark">LONDON INTERNATIONAL MED COSMETOLOGY ACADEMY</span>
+                    </div>
+                    <div class="facility-item">
+                        <div class="facility-line"></div>
+                        <span class="font-bold tracking-widest text-sm uppercase text-brand-dark">M.A.C. INTERNATIONAL ACADEMY</span>
+                    </div>
+                    <div class="facility-item">
+                        <div class="facility-line"></div>
+                        <span class="font-bold tracking-widest text-sm uppercase text-brand-dark">NCET</span>
+                    </div>
+                </div>
+
+
+
+                <a href="index.html#appointment"
+                    class="btn-shimmer bg-[#5D3434] text-white px-12 py-5 text-[11px] font-bold tracking-[0.2em] hover:bg-opacity-90 transition-all inline-block uppercase">
+                    Book Appointment
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         STATS BAR
+         ========================================== -->
+    <div class="bg-white bg-circles py-24 border-y border-gray-100">
+        <div class="container mx-auto px-4 md:px-12">
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-0">
+                <!-- Item 01 -->
+                <div class="flex-1 min-w-[140px] sm:min-w-[200px] text-center px-4 md:px-8">
+                    <div class="text-5xl font-bold text-brand-dark mb-2 font-serif">
+                        2+
+                    </div>
+                    <div class="text-[10px] font-bold tracking-[0.2em] text-brand-accent uppercase">
+                        Years Exp
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="hidden md:block w-[1px] h-16 bg-gray-100"></div>
+
+                <!-- Item 02 -->
+                <div class="flex-1 min-w-[140px] sm:min-w-[200px] text-center px-4 md:px-8">
+                    <div class="text-5xl font-bold text-brand-dark mb-2 font-serif">
+                        300+
+                    </div>
+                    <div class="text-[10px] font-bold tracking-[0.2em] text-brand-accent uppercase">
+                        Happy Patients
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="hidden md:block w-[1px] h-16 bg-gray-100"></div>
+
+                <!-- Item 03 -->
+                <div class="flex-1 min-w-[140px] sm:min-w-[200px] text-center px-4 md:px-8">
+                    <div class="text-5xl font-bold text-brand-dark mb-2 font-serif">
+                        5
+                    </div>
+                    <div class="text-[10px] font-bold tracking-[0.2em] text-brand-accent uppercase">
+                        Specialists
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="hidden md:block w-[1px] h-16 bg-gray-100"></div>
+
+                <!-- Item 04 -->
+                <div class="flex-1 min-w-[140px] sm:min-w-[200px] text-center px-4 md:px-8">
+                    <div class="text-5xl font-bold text-brand-dark mb-2 font-serif">
+                        4
+                    </div>
+                    <div class="text-[10px] font-bold tracking-[0.2em] text-brand-accent uppercase">
+                        Awards Won
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         AWARDS SECTION
+         ========================================== -->
+    <section class="py-24 bg-brand-secondary" data-aos="fade-up">
+        <div class="container mx-auto px-4 md:px-12">
+            <span
+                class="text-brand-accent font-bold tracking-[0.3em] text-[10px] mb-4 block uppercase font-serif">Awards
+                & Recognition</span>
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 leading-tight font-serif text-brand-dark max-w-2xl">
+                Small Appreciation Can Make Big Changes
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm shadow-2xl">
+                <div class="bg-[#78574E] p-12 text-white flex flex-col justify-center space-y-12">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-8">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-hospital-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm tracking-widest uppercase">
+                                    University Hospital
+                                </h4>
+                                <p class="text-[10px] text-white/50 uppercase tracking-widest mt-1">
+                                    2018 - Winner
+                                </p>
+                            </div>
+                        </div>
+                        <span class="text-[10px] font-bold text-white/30 tracking-[0.2em] uppercase">For
+                            Surgeries</span>
+                    </div>
+                    <div class="flex items-center justify-between border-b border-white/10 pb-8">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-clinic-medical text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm tracking-widest uppercase">
+                                    Medical Center
+                                </h4>
+                                <p class="text-[10px] text-white/50 uppercase tracking-widest mt-1">
+                                    2021 - Top 3
+                                </p>
+                            </div>
+                        </div>
+                        <span class="text-[10px] font-bold text-white/30 tracking-[0.2em] uppercase">For Therapy</span>
+                    </div>
+                    <div class="flex items-center justify-between border-b border-white/10 pb-8">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-microscope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm tracking-widest uppercase">
+                                    Skin Care
+                                </h4>
+                                <p class="text-[10px] text-white/50 uppercase tracking-widest mt-1">
+                                    2023 - Excellence
+                                </p>
+                            </div>
+                        </div>
+                        <span class="text-[10px] font-bold text-white/30 tracking-[0.2em] uppercase">For Skin
+                            Care</span>
+                    </div>
+                </div>
+                <div class="relative h-[500px] lg:h-auto">
+                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1200&auto=format&fit=crop"
+                        class="w-full h-full object-cover" alt="Medical Awards" />
+                    <div class="absolute inset-0 bg-[#78574E]/10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+          TESTIMONIALS (MATCH HOME PAGE)
+          ========================================== -->
+    <section class="py-16 bg-[#FDF9F7] relative overflow-hidden testimonial-section" data-aos="fade-up">
+        <!-- Decorative Blurred Circles -->
+        <div
+            class="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-white/60 rounded-full blur-[100px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] bg-brand-clay/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-4 md:px-12 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-14">
+                <span
+                    class="text-brand-clay font-bold tracking-[0.4em] text-[10px] mb-4 block uppercase opacity-80">Client
+                    Reviews</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6 tracking-tight uppercase">What People
+                    Says</h2>
+
+                <!-- Decorative Quote Icon with Smile Curve -->
+                <div class="flex flex-col items-center mt-6">
+                    <div class="flex gap-1 text-brand-clay mb-2">
+                        <i class="fa-solid fa-quote-left text-xl"></i>
+                        <i class="fa-solid fa-quote-right text-xl"></i>
+                    </div>
+                    <div class="w-24 h-6 border-b-2 border-brand-dark rounded-[50%] opacity-20"></div>
+                </div>
+            </div>
+
+            <!-- Testimonial Slider Wrapper -->
+            <div class="max-w-4xl mx-auto">
+                <div
+                    class="testimonial-container flex flex-col md:flex-row items-center gap-10 md:gap-16 transition-all duration-1000">
+                    <!-- Client Image -->
+                    <div class="w-48 h-48 md:w-56 md:h-56 flex-shrink-0 relative">
+                        <div class="absolute inset-0 border border-brand-clay/10 -translate-x-3 translate-y-3"></div>
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover relative z-10 shadow-xl" alt="Client">
+                    </div>
+
+                    <!-- Testimonial Content -->
+                    <div class="flex-1 relative">
+                        <!-- Decorative Vertical Line -->
+                        <div
+                            class="absolute left-[-40px] top-0 bottom-0 w-[1px] border-l border-dashed border-brand-clay/30 hidden lg:block">
+                        </div>
+
+                        <blockquote
+                            class="text-gray-600 text-base md:text-lg italic leading-relaxed mb-6 font-light">
+                            "The treatments provided by Dr. Sania Hussian are truly exceptional. Her clinical methodology, attention to detail, and use of advanced techniques completely revitalized my skin. An absolute standard of aesthetic excellence!"
+                        </blockquote>
+
+                        <div class="flex flex-col gap-3">
+                            <h4 class="text-brand-dark font-bold tracking-[0.2em] text-xs uppercase">Aliza Anderson -
+                                Cosmetologist</h4>
+                            <div class="flex gap-1 text-brand-clay text-[10px]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Pagination (Dashes) -->
+                <div class="flex justify-center gap-3 mt-14">
+                    <div class="w-8 h-1 bg-brand-clay/20 cursor-pointer hover:bg-brand-clay transition-all"></div>
+                    <div class="w-12 h-1 bg-brand-clay cursor-pointer"></div>
+                    <div class="w-8 h-1 bg-brand-clay/20 cursor-pointer hover:bg-brand-clay transition-all"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ==========================================
+          FOOTER (SYNCED WITH HOME)
+          ========================================== -->
+    <footer class="luxury-footer-bg pt-16 pb-6 text-white/90 relative overflow-hidden">
+        <!-- Elegant Background curves in Gold Outline -->
+        <div class="absolute inset-0 pointer-events-none opacity-[0.03]">
+            <svg class="w-full h-full" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-100 700 C 300 600, 450 850, 1000 650 C 1200 570, 1400 710, 1600 680" stroke="#D4AF37" stroke-width="1.5" />
+                <path d="M-50 500 C 400 450, 600 700, 1100 520 C 1300 450, 1500 550, 1700 500" stroke="#D4AF37" stroke-width="1" />
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-20 mb-12">
+                
+                <!-- Column 1: Brand & Philosophy -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <a href="index.html" class="group block mb-8">
+                        <img src="aastralogo.png" alt="Aastra Aesthetic" class="h-24 w-auto mb-8 brightness-0 invert group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                    <p class="text-sm font-light leading-relaxed text-white/90 mb-10 max-w-sm">
+                        Providing bespoke clinical cosmetology and cosmetologist-backed skincare systems. Experience clinical precision infused with absolute luxury care.
+                    </p>
+                    <!-- Social icons -->
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/profile.php?id=61589622653365" target="_blank"
+                            class="w-10 h-10 rounded-full luxury-glass-badge flex items-center justify-center text-white hover:text-white"
+                            aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f text-xs"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aastra_aesthetic/" target="_blank"
+                            class="w-10 h-10 rounded-full luxury-glass-badge flex items-center justify-center text-white hover:text-white"
+                            aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-xs"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@AastraAesthetic" target="_blank"
+                            class="w-10 h-10 rounded-full luxury-glass-badge flex items-center justify-center text-white hover:text-white"
+                            aria-label="YouTube">
+                            <i class="fa-brands fa-youtube text-xs"></i>
+                        </a>
+                        <a href="https://www.google.com/search?q=Aastra+Aesthetic&stick=H4sIAAAAAAAA_-NgU1I1qDBONDAyNzdOTjMyszBINkqzMqgwTzE0MUwyTTQyNjJKS000W8Qq4JhYXFKUqOCYWlySkVqSmQwA97gaNzwAAAA&hl=en&mat=CcJmeOlogZkOElcBTVDHnkJZXYz-CXYL2cIciOvsPDV1qtgko3PYNvJPl9HzqECNSV3-3pJxtfFeQHSJgk1h9xd-J7rANeUTgmtMh_TpDcjTgdnUkIuAfG89jiSamsenrLs&authuser=0" target="_blank"
+                            class="w-10 h-10 rounded-full luxury-glass-badge flex items-center justify-center text-white hover:text-white"
+                            aria-label="Google">
+                            <i class="fa-brands fa-google text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Expert Treatments -->
+                <div>
+                    <h4 class="text-white font-serif font-bold text-lg mb-8 tracking-wide relative inline-block">
+                        Treatments
+                        <span class="absolute bottom-[-6px] left-0 w-8 h-[1px] bg-brand-accent"></span>
+                    </h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a href="services.html" class="footer-link">Skin Treatment & Hydration</a></li>
+                        <li><a href="services.html" class="footer-link">Rhinoplasty (Nose Surgery)</a></li>
+                        <li><a href="services.html" class="footer-link">Cosmetic Surgery</a></li>
+                        <li><a href="services.html" class="footer-link">Double Chin Removal</a></li>
+                        <li><a href="services.html" class="footer-link">Laser Hair Removal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Navigation -->
+                <div>
+                    <h4 class="text-white font-serif font-bold text-lg mb-8 tracking-wide relative inline-block">
+                        Explore
+                        <span class="absolute bottom-[-6px] left-0 w-8 h-[1px] bg-brand-accent"></span>
+                    </h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="products.html" class="footer-link">Boutique Products</a></li>
+                        <li><a href="services.html" class="footer-link">Treatments & Services</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                        <li><a href="blog.html" class="footer-link">Our Journal (Blog)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Premium Subscription -->
+                <div>
+                    <span class="text-[9px] font-bold tracking-[0.3em] uppercase text-white block mb-3">Newsletter</span>
+                    <h4 class="text-white font-serif text-2xl font-semibold mb-8 uppercase tracking-wide leading-tight">
+                        GET IN <br> TOUCH
+                    </h4>
+                    
+                    <!-- Interactive Glassmorphic Form -->
+                    <div class="relative footer-input-wrapper flex items-center">
+                        <input type="email" placeholder=" " id="footer-newsletter-email" class="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-brand-accent text-sm text-white placeholder:opacity-0 transition-colors duration-300">
+                        <label for="footer-newsletter-email" class="absolute left-0 top-4 text-white text-sm pointer-events-none transition-all duration-300 transform origin-left">Your Email</label>
+                        <button class="absolute right-0 top-1/2 -translate-y-1/2 text-white hover:text-brand-accent hover:translate-x-1.5 transition-all duration-300" aria-label="Subscribe">
+                            <i class="fa-solid fa-paper-plane text-lg"></i>
+                        </button>
+                    </div>
+                    <p class="text-[10px] text-white mt-3 font-light">Join our circle for priority slots and curated skin guides.</p>
+                </div>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="w-full h-[1px] bg-white/10 mb-12"></div>
+
+            <!-- Bottom Row: Copyright & Credits -->
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <!-- Left: Copyright -->
+                <p class="text-xs text-white/90 text-center sm:text-left font-light">
+                    © 2026 Aastra Aesthetic By Sania. All Rights Reserved.
+                </p>
+                <!-- Right: Credits -->
+                <p class="text-xs text-white/90 text-center sm:text-right font-light">
+                    Designed and developed by <a href="https://goadslive.in/" target="_blank" class="text-brand-accent hover:text-white transition-colors">goadslive</a>
+                </p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        // Circular Text for Doctor Badge
+        const textStr = "GLOWING â€¢ SMOOTH â€¢ SKIN â€¢ PHY â€¢ GAURENTEE â€¢ ";
+        const textContainer = document.getElementById("circular-text");
+        if (textContainer) {
+            for (let i = 0; i < textStr.length; i++) {
+                let span = document.createElement("span");
+                span.innerHTML = textStr[i];
+                span.style.transform = `rotate(${i * (360 / textStr.length)}deg)`;
+                textContainer.appendChild(span);
+            }
+        }
+
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById("menu-toggle");
+        const menuClose = document.getElementById("menu-close");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener("click", () => {
+                mobileMenu.classList.remove("translate-x-full");
+            });
+        }
+
+        if (menuClose && mobileMenu) {
+            menuClose.addEventListener("click", () => {
+                mobileMenu.classList.add("translate-x-full");
+            });
+        }
+
+        if (mobileMenu) {
+            mobileMenu.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.add("translate-x-full");
+                });
+            });
+        }
+
+        // Before & After Slider Logic
+        document.querySelectorAll('.before-after-container').forEach(container => {
+            const slider = container.querySelector('.slider-input');
+            const handle = container.querySelector('.slider-handle');
+            const afterImage = container.querySelector('.after-image');
+
+            if (slider && handle && afterImage) {
+                slider.addEventListener('input', (e) => {
+                    const pos = e.target.value;
+                    handle.style.left = `${pos}%`;
+                    afterImage.style.clipPath = `inset(0 0 0 ${pos}%)`;
+                });
+            }
+        });
+    </script>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/919990035533" target="_blank" class="float-btn whatsapp-btn" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50,
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Aastra Aesthetic By Sania - Premium Skin & Aesthetic Clinic</title>
+    
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#B8860B',     /* Dark Goldenrod */
+                            secondary: '#FFFFFF',   /* Pure White */
+                            accent: '#D4AF37',      /* Classic Gold */
+                            dark: '#1A1A1A',        /* Black */
+                            muted: '#71717A',       /* Gray */
+                            clay: '#78574E',        /* Clay Brown */
+                            clayLight: '#B0978B'    /* Lighter Clay */
+                        }
+                    },
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        serif: ["Playfair Display", "serif"],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            font-family: "Outfit", sans-serif;
+            background-color: #FFFFFF;
+            scroll-behavior: smooth;
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .breadcrumb-item:after {
+            content: '/';
+            margin: 0 10px;
+            color: #C5A059;
+        }
+        .breadcrumb-item:last-child:after {
+            content: '';
+        }
+
+        .blog-card {
+            background: white;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px -12px rgba(0,0,0,0.15);
+        }
+        .blog-card img {
+            transition: transform 1.5s ease;
+        }
+        .blog-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .category-tag {
+            background-color: #78574E;
+            color: white;
+            padding: 4px 12px;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        .read-more-btn {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: #1A1A1A;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .read-more-btn:hover {
+            color: #78574E;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body class="text-brand-dark antialiased bg-[#FDF5F1]">
+
+    <!-- ==========================================
+         TOP BAR
+         ========================================== -->
+    <div class="bg-white border-b border-gray-100 py-2.5 px-4 md:px-12 text-[13px] font-medium text-gray-500 hidden lg:flex justify-between items-center z-[100] relative">
+        <div class="flex gap-8">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-brand-primary text-[10px]"></i>
+                +91 99900 35533
+            </span>
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-brand-primary text-[10px]"></i>
+                info@aastraaesthetic.clinic
+            </span>
+        </div>
+        <div class="flex gap-5 items-center">
+            <a href="https://www.facebook.com/profile.php?id=61589622653365" target="_blank" aria-label="Facebook" class="text-gray-400 hover:text-brand-clay transition text-base"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/aastra_aesthetic/" target="_blank" aria-label="Instagram" class="text-gray-400 hover:text-brand-clay transition text-base"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@AastraAesthetic" target="_blank" aria-label="YouTube" class="text-gray-400 hover:text-brand-clay transition text-base"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.google.com/search?q=Aastra+Aesthetic&stick=H4sIAAAAAAAA_-NgU1I1qDBONDAyNzdOTjMyszBINkqzMqgwTzE0MUwyTTQyNjJKS000W8Qq4JhYXFKUqOCYWlySkVqSmQwA97gaNzwAAAA&hl=en&mat=CcJmeOlogZkOElcBTVDHnkJZXYz-CXYL2cIciOvsPDV1qtgko3PYNvJPl9HzqECNSV3-3pJxtfFeQHSJgk1h9xd-J7rANeUTgmtMh_TpDcjTgdnUkIuAfG89jiSamsenrLs&authuser=0" target="_blank" aria-label="Google" class="text-gray-400 hover:text-brand-clay transition text-base"><i class="fa-brands fa-google"></i></a>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         NAVIGATION
+         ========================================== -->
+    <nav class="bg-white px-4 md:px-12 py-2 flex justify-between items-center sticky top-0 z-[1000] shadow-sm">
+        <div class="flex-shrink-0">
+            <a href="index.html" class="flex items-center">
+                <img src="aastralogo.png" alt="Aastra Aesthetic" class="h-[100px] w-auto">
+            </a>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-10 text-[11px] font-bold tracking-[0.2em] text-brand-dark">
+            <a href="index.html" class="hover:text-brand-clay transition-all">HOME</a>
+            <a href="about.html" class="hover:text-brand-clay transition-all">ABOUT US</a>
+            <a href="products.html" class="hover:text-brand-clay transition-all">PRODUCT</a>
+            <a href="services.html" class="hover:text-brand-clay transition-all">SERVICE</a>
+            <a href="contact.html" class="hover:text-brand-clay transition-all">CONTACT US</a>
+            <a href="blog.html" class="text-brand-clay hover:text-brand-dark transition-all">BLOG</a>
+        </div>
+
+        <div class="flex items-center">
+            <a href="index.html#appointment" class="btn-shimmer bg-brand-clay text-white px-8 py-3.5 text-[10px] font-bold tracking-[0.2em] hover:bg-brand-dark transition-all hidden sm:block">
+                APPOINTMENT
+            </a>
+            <button id="menu-toggle" class="lg:hidden text-brand-dark ml-4">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark z-[2000] transform translate-x-full transition-transform duration-300 lg:hidden">
+            <div class="p-8 flex flex-col h-full text-white">
+                <div class="flex justify-between items-center mb-16">
+                    <img src="aastralogo.png" alt="Aastra Aesthetic" class="h-10 w-auto brightness-0 invert">
+                    <button id="menu-close" class="text-white">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-8 text-xl font-bold tracking-widest uppercase">
+                    <a href="index.html">HOME</a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="doctors.html">DOCTORS</a>
+                    <a href="services.html">SERVICES</a>
+                    <a href="contact.html">CONTACT</a>
+                    <a href="blog.html" class="text-brand-accent">BLOG</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         HERO BANNER
+         ========================================== -->
+    <section class="relative py-20 md:py-24 flex items-center justify-center text-center overflow-hidden min-h-[300px] bg-fixed bg-center bg-cover"
+             style="background-image: url('https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=1920&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/80 via-[#1A1A1A]/70 to-[#78574E]/90"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 flex flex-col items-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6 leading-tight" data-aos="fade-up">
+                Our Blog
+            </h1>
+            <div class="flex items-center justify-center gap-3 text-xs font-bold tracking-[0.2em] text-white/60 uppercase mt-2" data-aos="fade-up" data-aos-delay="100">
+                <a href="index.html" class="hover:text-brand-accent transition">Home</a>
+                <span class="text-brand-accent">-</span>
+                <span class="text-white">Blog & Articles</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         BLOG GRID SECTION
+         ========================================== -->
+    <section class="py-32 px-4 md:px-12" data-aos="fade-up">
+        <div class="container mx-auto">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-24 max-w-2xl mx-auto">
+                <span class="text-[#D47559] font-bold tracking-[0.5em] text-[10px] mb-6 block uppercase">Latest Insights</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-brand-dark mb-8 leading-tight">Expert Skincare Tips & <br> Treatment Updates</h2>
+                <div class="w-20 h-[1px] bg-brand-clay mx-auto"></div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
+                
+                <!-- Blog 1 -->
+                <article class="blog-card group">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <span class="category-tag">Skincare</span>
+                        <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Post Title">
+                    </div>
+                    <div class="p-6 md:p-8 pt-6">
+                        <div class="flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] text-gray-400 mb-4 uppercase">
+                            <span>May 12, 2024</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-clay"></span>
+                            <span>By Admin</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-brand-dark mb-6 leading-snug group-hover:text-brand-clay transition-colors">
+                            The Secret to Lasting Hydration: A Deep Dive
+                        </h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light mb-8 line-clamp-3">
+                            Discover the essential steps and ingredients to keep your skin glowing and hydrated through every season. We explore the science behind moisture...
+                        </p>
+                        <a href="blog.html" class="read-more-btn uppercase">
+                            Read More
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog 2 -->
+                <article class="blog-card group">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <span class="category-tag">Laser</span>
+                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Post Title">
+                    </div>
+                    <div class="p-6 md:p-8 pt-6">
+                        <div class="flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] text-gray-400 mb-4 uppercase">
+                            <span>May 08, 2024</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-clay"></span>
+                            <span>By Admin</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-brand-dark mb-6 leading-snug group-hover:text-brand-clay transition-colors">
+                            Laser Hair Removal: What You Need to Know
+                        </h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light mb-8 line-clamp-3">
+                            Everything you need to prepare for your first laser session. From pre-treatment care to post-care essentials for the best clinical results...
+                        </p>
+                        <a href="blog.html" class="read-more-btn uppercase">
+                            Read More
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog 3 -->
+                <article class="blog-card group">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <span class="category-tag">Anti-Aging</span>
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Post Title">
+                    </div>
+                    <div class="p-6 md:p-8 pt-6">
+                        <div class="flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] text-gray-400 mb-4 uppercase">
+                            <span>April 28, 2024</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-clay"></span>
+                            <span>By Admin</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-brand-dark mb-6 leading-snug group-hover:text-brand-clay transition-colors">
+                            Reversing Time: Modern Anti-Aging Solutions
+                        </h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light mb-8 line-clamp-3">
+                            Explore the latest advancements in non-surgical anti-aging treatments. From fillers to RF therapy, find the best fit for your skin type...
+                        </p>
+                        <a href="blog.html" class="read-more-btn uppercase">
+                            Read More
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog 4 -->
+                <article class="blog-card group">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <span class="category-tag">Health</span>
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Post Title">
+                    </div>
+                    <div class="p-6 md:p-8 pt-6">
+                        <div class="flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] text-gray-400 mb-4 uppercase">
+                            <span>April 15, 2024</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-clay"></span>
+                            <span>By Admin</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-brand-dark mb-6 leading-snug group-hover:text-brand-clay transition-colors">
+                            Sun Protection: More Than Just Sunscreen
+                        </h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light mb-8 line-clamp-3">
+                            Why year-round UV protection is crucial for your skin's health. Learn about mineral vs chemical filters and how to choose the right one...
+                        </p>
+                        <a href="blog.html" class="read-more-btn uppercase">
+                            Read More
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog 5 -->
+                <article class="blog-card group">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <span class="category-tag">Facial</span>
+                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Post Title">
+                    </div>
+                    <div class="p-6 md:p-8 pt-6">
+                        <div class="flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] text-gray-400 mb-4 uppercase">
+                            <span>April 10, 2024</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-clay"></span>
+                            <span>By Admin</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-brand-dark mb-6 leading-snug group-hover:text-brand-clay transition-colors">
+                            The Benefits of Monthly Clinical Facials
+                        </h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light mb-8 line-clamp-3">
+                            Maintaining professional facials can transform your skin texture over time. Discover which clinical facial is best for your skin goals...
+                        </p>
+                        <a href="blog.html" class="read-more-btn uppercase">
+                            Read More
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog 6 -->
+                <article class="blog-card group">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <span class="category-tag">Clinical</span>
+                        <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Post Title">
+                    </div>
+                    <div class="p-6 md:p-8 pt-6">
+                        <div class="flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] text-gray-400 mb-4 uppercase">
+                            <span>April 02, 2024</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-clay"></span>
+                            <span>By Admin</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-brand-dark mb-6 leading-snug group-hover:text-brand-clay transition-colors">
+                            Post-Treatment Care: Maximizing Results
+                        </h3>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light mb-8 line-clamp-3">
+                            The first 48 hours after a clinical procedure are critical. Follow our expert guide to ensure you heal perfectly and see the best results...
+                        </p>
+                        <a href="blog.html" class="read-more-btn uppercase">
+                            Read More
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-32 flex justify-center items-center gap-5">
+                <a href="blog.html" class="w-14 h-14 border border-[#78574E] bg-[#78574E] text-white flex items-center justify-center text-[13px] font-bold transition-all shadow-md">01</a>
+                <a href="blog.html" class="w-14 h-14 border border-[#78574E]/30 text-brand-dark flex items-center justify-center text-[13px] font-bold hover:bg-[#78574E] hover:text-white hover:border-[#78574E] transition-all">02</a>
+                <a href="blog.html" class="w-14 h-14 border border-[#78574E]/30 text-brand-dark flex items-center justify-center text-[13px] font-bold hover:bg-[#78574E] hover:text-white hover:border-[#78574E] transition-all">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+          FOOTER (SYNCED)
+          ========================================== -->
+    <footer class="luxury-footer-bg pt-16 pb-6 text-white/90 relative overflow-hidden">
+        <!-- Elegant Background curves in Gold Outline -->
+        <div class="absolute inset-0 pointer-events-none opacity-[0.03]">
+            <svg class="w-full h-full" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-100 700 C 300 600, 450 850, 1000 650 C 1200 570, 1400 710, 1600 680" stroke="#D4AF37" stroke-width="1.5" />
+                <path d="M-50 500 C 400 450, 600 700, 1100 520 C 1300 450, 1500 550, 1700 500" stroke="#D4AF37" stroke-width="1" />
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-20 mb-12">
+                
+                <!-- Column 1: Brand & Philosophy -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <a href="index.html" class="group block mb-8">
+                        <img src="aastralogo.png" alt="Aastra Aesthetic" class="h-24 w-auto mb-8 brightness-0 invert group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                    <p class="text-sm font-light leading-relaxed text-white/90 mb-10 max-w-sm">
+                        Providing bespoke clinical cosmetology and cosmetologist-backed skincare systems. Experience clinical precision infused with absolute luxury care.
+                    </p>
+                    <!-- Social icons -->
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/profile.php?id=61589622653365" target="_blank"
+                            class="w-10 h-10 rounded-full luxury-glass-badge flex items-center justify-center text-white hover:text-white"
+                            aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f text-xs"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aastra_aesthetic/" target="_blank"
+                            class="w-10 h-10 rounded-full luxury-glass-badge flex items-center justify-center text-white hover:text-white"
+                            aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-xs"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@AastraAesthetic" target="_blank"
+                            class="w-10 h-10 rounded-full luxury-glass-badge flex items-center justify-center text-white hover:text-white"
+                            aria-label="YouTube">
+                            <i class="fa-brands fa-youtube text-xs"></i>
+                        </a>
+                        <a href="https://www.google.com/search?q=Aastra+Aesthetic&stick=H4sIAAAAAAAA_-NgU1I1qDBONDAyNzdOTjMyszBINkqzMqgwTzE0MUwyTTQyNjJKS000W8Qq4JhYXFKUqOCYWlySkVqSmQwA97gaNzwAAAA&hl=en&mat=CcJmeOlogZkOElcBTVDHnkJZXYz-CXYL2cIciOvsPDV1qtgko3PYNvJPl9HzqECNSV3-3pJxtfFeQHSJgk1h9xd-J7rANeUTgmtMh_TpDcjTgdnUkIuAfG89jiSamsenrLs&authuser=0" target="_blank"
+                            class="w-10 h-10 rounded-full luxury-glass-badge flex items-center justify-center text-white hover:text-white"
+                            aria-label="Google">
+                            <i class="fa-brands fa-google text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Expert Treatments -->
+                <div>
+                    <h4 class="text-white font-serif font-bold text-lg mb-8 tracking-wide relative inline-block">
+                        Treatments
+                        <span class="absolute bottom-[-6px] left-0 w-8 h-[1px] bg-brand-accent"></span>
+                    </h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a href="services.html" class="footer-link">Skin Treatment & Hydration</a></li>
+                        <li><a href="services.html" class="footer-link">Rhinoplasty (Nose Surgery)</a></li>
+                        <li><a href="services.html" class="footer-link">Cosmetic Surgery</a></li>
+                        <li><a href="services.html" class="footer-link">Double Chin Removal</a></li>
+                        <li><a href="services.html" class="footer-link">Laser Hair Removal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Navigation -->
+                <div>
+                    <h4 class="text-white font-serif font-bold text-lg mb-8 tracking-wide relative inline-block">
+                        Explore
+                        <span class="absolute bottom-[-6px] left-0 w-8 h-[1px] bg-brand-accent"></span>
+                    </h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="products.html" class="footer-link">Boutique Products</a></li>
+                        <li><a href="services.html" class="footer-link">Treatments & Services</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                        <li><a href="blog.html" class="footer-link">Our Journal (Blog)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Premium Subscription -->
+                <div>
+                    <span class="text-[9px] font-bold tracking-[0.3em] uppercase text-white block mb-3">Newsletter</span>
+                    <h4 class="text-white font-serif text-2xl font-semibold mb-8 uppercase tracking-wide leading-tight">
+                        GET IN <br> TOUCH
+                    </h4>
+                    
+                    <!-- Interactive Glassmorphic Form -->
+                    <div class="relative footer-input-wrapper flex items-center">
+                        <input type="email" placeholder=" " id="footer-newsletter-email" class="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-brand-accent text-sm text-white placeholder:opacity-0 transition-colors duration-300">
+                        <label for="footer-newsletter-email" class="absolute left-0 top-4 text-white text-sm pointer-events-none transition-all duration-300 transform origin-left">Your Email</label>
+                        <button class="absolute right-0 top-1/2 -translate-y-1/2 text-white hover:text-brand-accent hover:translate-x-1.5 transition-all duration-300" aria-label="Subscribe">
+                            <i class="fa-solid fa-paper-plane text-lg"></i>
+                        </button>
+                    </div>
+                    <p class="text-[10px] text-white mt-3 font-light">Join our circle for priority slots and curated skin guides.</p>
+                </div>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="w-full h-[1px] bg-white/10 mb-12"></div>
+
+            <!-- Bottom Row: Copyright & Credits -->
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-center md:text-left">
+                <!-- Left: Copyright -->
+                <p class="text-xs text-white/90 text-center sm:text-left font-light">
+                    © 2026 Aastra Aesthetic By Sania. All Rights Reserved.
+                </p>
+                <!-- Right: Credits -->
+                <p class="text-xs text-white/90 text-center sm:text-right font-light">
+                    Designed and developed by <a href="https://goadslive.in/" target="_blank" class="text-brand-accent hover:text-white transition-colors">goadslive</a>
+                </p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById("menu-toggle");
+        const menuClose = document.getElementById("menu-close");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (menuToggle && mobileMenu) menuToggle.addEventListener("click", () => mobileMenu.classList.remove("translate-x-full"));
+        if (menuClose && mobileMenu) menuClose.addEventListener("click", () => mobileMenu.classList.add("translate-x-full"));
+    </script>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50,
+        });
+    </script>
+</body>
+</html>
+

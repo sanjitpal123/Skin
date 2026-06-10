@@ -1,0 +1,3010 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aastra Aesthetic - Landing Page</title>
+
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery-bundle.min.css"
+    />
+
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                blue: "#0B2A5E" /* Deep Navy Blue */,
+                orange: "#F37324" /* Vibrant Orange */,
+                cream: "#FFFDF8" /* Light Cream Background */,
+                light: "#F5EFE6" /* Slightly darker cream for contrast */,
+                gray: "#6B7280",
+              },
+            },
+            fontFamily: {
+              outfit: ["Outfit", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+      body {
+        font-family: "Outfit", sans-serif;
+        background-color: #fffdf8;
+        scroll-behavior: smooth;
+      }
+
+      /* Glowora Banner Styles - Redesigned & Centered for Aastra */
+      .hero-bg {
+        background-image: url("skingirl.png");
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        padding-bottom: 2rem;
+      }
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.75) 0%,
+          rgba(0, 0, 0, 0.35) 50%,
+          rgba(0, 0, 0, 0.8) 100%
+        );
+        z-index: 1;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        font-family: "Inter", sans-serif;
+      }
+      .italic-serif {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      /* Centered Hero Animations and Custom Styles */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+      @keyframes pulse-orange {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(243, 115, 36, 0.4);
+        }
+        50% {
+          box-shadow: 0 0 15px 5px rgba(243, 115, 36, 0.2);
+        }
+      }
+      .pulse-orange {
+        animation: pulse-orange 3s infinite;
+      }
+      .luxury-badge {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Premium Button Styles */
+      .btn-premium-orange {
+        background: linear-gradient(
+          135deg,
+          #ff8038 0%,
+          #f37324 50%,
+          #cd5a11 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 25px -5px rgba(243, 115, 36, 0.4);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-premium-orange::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.45) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-25deg);
+        transition: none;
+        z-index: 2;
+      }
+      .btn-premium-orange:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 15px 30px -5px rgba(243, 115, 36, 0.6);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+      .btn-premium-orange:hover::after {
+        animation: shimmer-effect 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .btn-premium-outline {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: #ffffff !important;
+        box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-premium-outline:hover {
+        background: rgba(255, 255, 255, 0.12) !important;
+        border-color: rgba(255, 255, 255, 0.45) !important;
+        color: #ffffff !important;
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 15px 30px -10px rgba(255, 255, 255, 0.1);
+      }
+
+      /* Fully rounded pill buttons */
+      .btn-orange {
+        background-color: #f37324;
+        color: white;
+        border-radius: 9999px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+      }
+      .btn-orange:hover {
+        background-color: #e06313;
+      }
+      .btn-outline {
+        background-color: transparent;
+        border: 1px solid #e5e7eb;
+        color: #6b7280;
+        border-radius: 9999px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+      }
+      .btn-outline:hover {
+        border-color: #0b2a5e;
+        color: #0b2a5e;
+      }
+      .btn-blue {
+        background-color: #0b2a5e;
+        color: white;
+        border-radius: 9999px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+      }
+
+      /* Floating Circular Dial with Dots */
+      .circular-dial {
+        animation: spin-slow 15s linear infinite;
+      }
+      @keyframes spin-slow {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Marquee */
+      .marquee-container {
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .marquee-content {
+        display: inline-block;
+        animation: marquee 15s linear infinite;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #fffdf8;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #f37324;
+        border-radius: 10px;
+      }
+
+      /* Before/After Container */
+      .ba-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+      .ba-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        border-right: 2px solid white;
+      }
+      .ba-overlay img {
+        width: 200%;
+        height: 100%;
+        object-fit: cover;
+        max-width: none;
+      }
+      .slider-arrow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: ew-resize;
+        z-index: 10;
+      }
+
+      /* Vertical Accordion Cards */
+      .vertical-card {
+        transition: all 0.3s ease;
+      }
+      .vertical-card:hover {
+        flex-grow: 1.5;
+      }
+
+      /* FAQ Accordion */
+      .faq-item {
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      .faq-toggle:checked ~ .faq-answer {
+        max-height: 500px;
+      }
+      .faq-toggle:checked ~ label .fa-plus {
+        display: none;
+      }
+      .faq-toggle:checked ~ label .fa-minus {
+        display: block !important;
+      }
+
+      .overlapping-img-1 {
+        z-index: 2;
+        position: relative;
+      }
+      .overlapping-img-2 {
+        z-index: 1;
+        margin-top: -20%;
+        margin-left: -15%;
+        position: relative;
+      }
+
+      /* Mobile Accordion Override */
+      @media (max-width: 767px) {
+        .accordion-container {
+          height: auto !important;
+        }
+        .treatment-card {
+          flex: none !important;
+          height: auto !important;
+          margin-bottom: 0.5rem;
+        }
+        .collapsed-content {
+          display: none !important;
+        }
+        .expanded-content {
+          display: flex !important;
+          flex-direction: column !important;
+          height: auto !important;
+          padding: 1rem !important;
+        }
+        .expanded-content > div:first-child {
+          height: 250px !important;
+          width: 100% !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="text-brand-blue antialiased bg-brand-cream">
+    <!-- TOP BAR -->
+    <div
+      class="bg-white border-b border-gray-100 py-2 px-4 md:px-12 text-xs font-medium text-gray-500 hidden lg:flex justify-between items-center z-[100] relative"
+    >
+      <div class="flex items-center gap-2 text-brand-orange font-bold">
+        <i class="fa-solid fa-fire"></i> Best Cosmetic Clinic 2026
+      </div>
+      <div class="flex gap-6 items-center">
+        <span class="flex items-center gap-2"
+          ><i class="fa-solid fa-phone text-brand-orange"></i> +91 99900
+          35533</span
+        >
+        <span class="flex items-center gap-2"
+          ><i class="fa-solid fa-envelope text-brand-orange"></i>
+          aastra.aesthetic2403@gmail.com</span
+        >
+        <div class="flex gap-4 ml-4 text-sm">
+          <a
+            href="https://www.facebook.com/people/Aastra-Aesthetic/61589622653365/"
+            target="_blank"
+            class="text-brand-blue hover:text-brand-orange"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/aastra_aesthetic/"
+            target="_blank"
+            class="text-brand-blue hover:text-brand-orange"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/@AastraAesthetic"
+            target="_blank"
+            class="text-brand-blue hover:text-brand-orange"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.google.com/search?q=Aastra+Aesthetic&stick=H4sIAAAAAAAA_-NgU1I1qDBONDAyNzdOTjMyszBINkqzMqgwTzE0MUwyTTQyNjJKS000W8Qq4JhYXFKUqOCYWlySkVqSmQwA97gaNzwAAAA&hl=en&mat=CcJmeOlogZkOElcBTVDHnkJZXYz-CXYL2cIciOvsPDV1qtgko3PYNvJPl9HzqECNSV3-3pJxtfFeQHSJgk1h9xd-J7rANeUTgmtMh_TpDcjTgdnUkIuAfG89jiSamsenrLs&authuser=0&sei=d5QpatGPC6Cl0-kPs6Lt4AQ"
+            target="_blank"
+            class="text-brand-blue hover:text-brand-orange"
+            ><i class="fa-brands fa-google"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GLOWORA HERO BANNER -->
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="hero-content px-8 md:px-16 py-8">
+        <!-- Nav -->
+        <nav
+          class="flex justify-between items-center w-full bg-black/30 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none p-3 md:p-0 rounded-2xl md:rounded-none border border-white/10 md:border-none relative z-50"
+        >
+          <!-- Logo (Left) -->
+          <div class="flex items-center">
+            <a
+              href="landing.html"
+              class="flex items-center justify-center bg-white px-5 py-3 lg:px-6 lg:py-4 rounded-[2rem] shadow-[0_10px_25px_rgba(0,0,0,0.1)] hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.15)] transition-all duration-300"
+            >
+              <img
+                src="aastralogo.png"
+                alt="Aastra Aesthetic"
+                class="h-10 md:h-14 lg:h-20 w-auto object-contain"
+              />
+            </a>
+          </div>
+          
+          <!-- Nav Links (Center) -->
+          <div
+            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 gap-8 text-[14px] font-medium text-white/80 tracking-wide"
+          >
+            <a href="#" class="hover:text-white transition">Home</a>
+            <a href="#about-doctor" class="hover:text-white transition"
+              >About</a
+            >
+            <a href="#treatments" class="hover:text-white transition"
+              >Services</a
+            >
+            <a href="#gallery" class="hover:text-white transition">Gallery</a>
+          </div>
+          <div
+            class="flex items-center gap-4 md:gap-6 text-[13px] font-medium text-white"
+          >
+            <a
+              href="tel:+919990035533"
+              class="px-6 py-2.5 rounded-full bg-brand-orange text-white hover:bg-[#e06313] shadow-lg transition hidden sm:block font-bold tracking-widest uppercase text-[10px]"
+            >
+              Book Now
+            </a>
+            <button
+              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/30 backdrop-blur-md transition text-white"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="4" y1="8" x2="20" y2="8"></line>
+                <line x1="4" y1="16" x2="20" y2="16"></line>
+              </svg>
+            </button>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div
+          class="flex-1 flex flex-col justify-center items-center text-center max-w-4xl mx-auto mt-12 text-white relative z-10 w-full"
+        >
+          <!-- Luxury Tagline Badge -->
+          <div
+            class="inline-flex items-center gap-2 px-5 py-2 rounded-full luxury-badge text-brand-orange text-xs font-bold tracking-[0.25em] uppercase mb-8 animate-float"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-brand-orange pulse-orange"
+            ></span>
+            Premium Skin & Aesthetic Clinic
+          </div>
+
+          <h1
+            class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.2] tracking-tight uppercase mb-8 max-w-4xl"
+          >
+            Aastra Aesthetic <br />
+            <span class="text-brand-orange">Cosmetology & Skincare</span>
+          </h1>
+          <p
+            class="text-white/80 text-sm md:text-base lg:text-lg max-w-2xl leading-[1.6] mb-10 font-light"
+          >
+            Discover medical-grade cosmetology and personalized skincare systems
+            formulated to reveal your skin's natural, healthy radiance.
+            Experience clinical precision infused with absolute luxury care.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-5 justify-center items-center w-full mt-4"
+          >
+            <!-- Book Appointment button (Vibrant Orange Pill) -->
+            <a
+              href="tel:+919990035533"
+              class="btn-premium-orange px-11 py-5 rounded-full text-white font-bold text-xs tracking-[0.22em] flex items-center gap-2.5 uppercase w-full sm:w-auto justify-center"
+            >
+              Book Appointment
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="mt-0.5"
+              >
+                <path d="m5 12 14 0" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </a>
+            <!-- Explore Services button (Outline Glass Pill) -->
+            <a
+              href="#treatments"
+              class="btn-premium-outline px-11 py-5 rounded-full text-xs font-bold tracking-[0.22em] uppercase w-full sm:w-auto text-center"
+            >
+              Explore Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: ABOUT US / MEET THE DOCTOR -->
+    <section
+      class="py-12 md:py-32 bg-white overflow-hidden relative"
+      id="about-doctor"
+    >
+      <!-- Subtle background accents -->
+      <div
+        class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#F5EDE8]/60 to-transparent rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-brand-cream/40 to-transparent rounded-full blur-3xl pointer-events-none"
+      ></div>
+
+      <div
+        class="container mx-auto px-4 md:px-12 w-[90%] max-w-[1400px] relative z-10"
+      >
+        <!-- Top label -->
+        <div class="flex items-center gap-3 mb-16" data-aos="fade-up">
+          <div class="flex items-center gap-2">
+            <span
+              class="w-2 h-2 rounded-full bg-brand-orange inline-block"
+            ></span>
+            <span
+              class="w-2 h-2 rounded-full bg-brand-orange/50 inline-block"
+            ></span>
+          </div>
+          <span
+            class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-blue/60"
+            style="font-family: &quot;Inter&quot;, sans-serif"
+            >Expert Doctors</span
+          >
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+          <!-- Left: Doctor Portrait -->
+          <div class="w-full lg:w-5/12 relative" data-aos="fade-right">
+            <div class="about-portrait-wrapper relative">
+              <!-- Warm background frame -->
+              <div
+                class="absolute -inset-4 md:-inset-6 bg-gradient-to-br from-[#D4B8A0] via-[#C9A88E] to-[#B8977C] rounded-[28px] md:rounded-[36px] shadow-2xl"
+              ></div>
+              <!-- Image -->
+              <div
+                class="relative rounded-[20px] md:rounded-[28px] overflow-hidden shadow-xl"
+              >
+                <img
+                  src="saniaimage.jpeg"
+                  alt="Dr. Sania - Expert Dermatologist & Aesthetic Surgeon at Aastra Aesthetic"
+                  class="w-full h-[420px] sm:h-[500px] md:h-[580px] object-cover object-top"
+                />
+                <!-- Subtle gradient overlay at the bottom -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent"
+                ></div>
+              </div>
+
+              <!-- Floating experience badge -->
+              <div
+                class="absolute -bottom-5 -right-4 md:-bottom-6 md:-right-6 bg-white rounded-2xl shadow-xl px-5 py-4 border border-gray-100/80 animate-float z-20"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-11 h-11 rounded-full bg-gradient-to-br from-brand-orange to-[#E8641A] flex items-center justify-center shadow-lg"
+                  >
+                    <i class="fa-solid fa-award text-white text-lg"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="text-xl font-extrabold text-brand-blue leading-none"
+                    >
+                      2+
+                    </p>
+                    <p
+                      class="text-[10px] text-gray-400 font-medium uppercase tracking-wider"
+                    >
+                      Years Exp.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating verified badge (top-left) -->
+              <div
+                class="absolute -top-3 -left-3 md:-top-5 md:-left-5 bg-white/95 backdrop-blur-md rounded-xl shadow-lg px-4 py-3 border border-gray-100/60 animate-float z-20"
+                style="animation-delay: 1.5s"
+              >
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-green-500 text-sm"
+                    ></i>
+                  </div>
+                  <span class="text-[11px] font-semibold text-gray-700"
+                    >Board Certified</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Content -->
+          <div class="w-full lg:w-7/12 space-y-8" data-aos="fade-left">
+            <!-- Headline -->
+            <div class="space-y-4">
+              <h2
+                class="text-3xl sm:text-4xl md:text-[46px] font-extrabold text-brand-blue leading-[1.15] tracking-tight"
+              >
+                Experienced doctors<br />you can
+                <span class="italic-serif text-brand-orange">trust</span>
+              </h2>
+            </div>
+
+            <!-- Quote Block -->
+            <div class="relative pl-6 border-l-[3px] border-brand-orange/30">
+              <div
+                class="absolute -top-2 -left-3 text-brand-orange/15 text-5xl font-serif leading-none select-none"
+              >
+                "
+              </div>
+              <p
+                class="text-gray-500 text-[15px] md:text-base leading-relaxed italic"
+                style="font-family: &quot;Inter&quot;, sans-serif"
+              >
+                Dr. Sania blends advanced techniques with an artistic touch to
+                enhance natural beauty ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â delivering safe,
+                stable, and personalized results that boost confidence.
+              </p>
+            </div>
+
+            <!-- Doctor Name & Credentials -->
+            <div class="space-y-1 pt-2">
+              <h3
+                class="text-2xl md:text-[28px] font-extrabold text-brand-blue leading-tight"
+                style="font-family: &quot;Playfair Display&quot;, serif"
+              >
+                Dr. Sania
+              </h3>
+              <p class="text-brand-blue/70 text-sm font-semibold tracking-wide">
+                MBBS, MD (Dermatology)
+              </p>
+              <p
+                class="text-brand-orange text-xs font-semibold uppercase tracking-[0.15em]"
+              >
+                Cosmetic & Aesthetic Dermatologist
+              </p>
+            </div>
+
+            <!-- Divider -->
+            <div class="flex items-center gap-4">
+              <div
+                class="h-px flex-1 bg-gradient-to-r from-gray-200 to-transparent"
+              ></div>
+              <div class="w-1.5 h-1.5 rounded-full bg-brand-orange/40"></div>
+              <div
+                class="h-px flex-1 bg-gradient-to-l from-gray-200 to-transparent"
+              ></div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="flex flex-wrap gap-6 md:gap-10">
+              <div class="text-center">
+                <p
+                  class="text-3xl md:text-4xl font-extrabold text-brand-blue leading-none"
+                >
+                  300<span class="text-brand-orange">+</span>
+                </p>
+                <p
+                  class="text-[11px] text-gray-400 font-medium uppercase tracking-wider mt-1"
+                >
+                  Patients
+                </p>
+              </div>
+              <div class="w-px h-12 bg-gray-200 hidden md:block"></div>
+              <div class="text-center">
+                <p
+                  class="text-3xl md:text-4xl font-extrabold text-brand-blue leading-none"
+                >
+                  5
+                </p>
+                <p
+                  class="text-[11px] text-gray-400 font-medium uppercase tracking-wider mt-1"
+                >
+                  Specialists
+                </p>
+              </div>
+              <div class="w-px h-12 bg-gray-200 hidden md:block"></div>
+              <div class="text-center">
+                <p
+                  class="text-3xl md:text-4xl font-extrabold text-brand-blue leading-none"
+                >
+                  3
+                </p>
+                <p
+                  class="text-[11px] text-gray-400 font-medium uppercase tracking-wider mt-1"
+                >
+                  Awards Won
+                </p>
+              </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-row flex-nowrap w-full gap-2 sm:gap-4 pt-4">
+              <a
+                href="tel:+919990035533"
+                class="btn-premium-orange flex-1 inline-flex justify-center items-center gap-1 sm:gap-2.5 text-white font-bold text-[9px] sm:text-sm px-1 py-3.5 sm:px-8 sm:py-4 rounded-full uppercase tracking-widest text-center"
+              >
+                <i class="fa-solid fa-calendar-check text-[10px] sm:text-sm"></i>
+                <span class="truncate">Book Appointment</span>
+              </a>
+              <a
+                href="#treatments"
+                class="group flex-1 inline-flex justify-center items-center gap-1 sm:gap-2.5 font-bold text-[9px] sm:text-sm px-1 py-3.5 sm:px-8 sm:py-4 rounded-full uppercase tracking-widest border-2 border-brand-blue/15 text-brand-blue hover:border-brand-blue hover:bg-brand-blue hover:text-white transition-all duration-400 text-center"
+              >
+                <i class="fa-solid fa-stethoscope text-[10px] sm:text-sm"></i>
+                <span class="truncate">View Treatments</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: FEATURED BEAUTY TREATMENTS -->
+    <section class="pt-6 md:pt-10 pb-16 md:pb-56 bg-brand-cream text-center">
+      <div class="container mx-auto px-4 md:px-12 w-[90%] max-w-[1600px]">
+        <!-- Main Feature Block 2 (New Exact Match Section) -->
+        <div class="flex flex-col md:flex-row gap-8 md:gap-16 text-left mt-2 md:mt-10">
+          <!-- Left Image with Play Dial & Border -->
+          <div class="w-full md:w-1/2 relative pr-4">
+            <!-- Decorative line with star - Gold styled -->
+            <div
+              class="absolute top-8 left-0 right-4 bottom-8 border-l border-b border-brand-orange/30 rounded-bl-[100px] z-0"
+            >
+              <i
+                class="fa-solid fa-star-of-life absolute -bottom-[7px] left-12 text-brand-orange text-sm animate-pulse"
+              ></i>
+            </div>
+
+            <img
+              src="indian_skincare_analysis.png"
+              class="w-full h-auto sm:h-[500px] object-cover rounded-bl-[100px] rounded-tr-xl rounded-br-xl ml-2 sm:ml-4 relative z-10 shadow-2xl shadow-brand-blue/10"
+            />
+
+            <!-- Circular Dial -->
+            <div
+              class="absolute -bottom-6 left-8 sm:left-12 w-28 h-28 sm:w-32 sm:h-32 bg-white rounded-full flex items-center justify-center shadow-xl z-20 circular-dial"
+            >
+              <i
+                class="fa-solid fa-play text-black text-lg sm:text-xl z-10 absolute ml-1"
+              ></i>
+              <svg
+                class="w-full h-full absolute top-0 left-0"
+                viewBox="0 0 100 100"
+              >
+                <defs>
+                  <path
+                    id="playTextPath"
+                    d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"
+                  ></path>
+                </defs>
+                <text
+                  class="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase fill-current text-black"
+                >
+                  <textPath href="#playTextPath" startOffset="0%">
+                    EXPLORE MORE &bull; EXPLORE MORE &bull;
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Right Content -->
+          <div class="w-full md:w-1/2 pt-4 md:pt-10 relative z-30">
+            <h3
+              class="text-3xl md:text-[40px] font-extrabold text-brand-blue mb-6 leading-[1.2]"
+            >
+              Beyond Skin Deep:<br />
+              <span class="text-brand-orange">Personalized Care</span> For Your
+              Unique Skincare Journey
+            </h3>
+            <p
+              class="text-gray-600 mb-8 text-[15px] leading-relaxed max-w-lg font-light"
+            >
+              We believe healthy, radiant skin is achievable for everyone. We
+              combine advanced dermatology with innovative cosmetic solutions to
+              address your unique skin concerns. Our team of board-certified
+              dermatologists and experienced aestheticians create personalized
+              treatment plans to achieve your desired results, whether it's
+              treating acne, restoring sun damage, or enhancing your natural
+              beauty. Explore our website to learn more about our services and
+              discover the confidence that comes with feeling your best in your
+              own skin.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6"
+            >
+              <!-- Modern Solid Orange CTA Button -->
+              <a
+                href="tel:+919990035533"
+                class="px-8 py-4 rounded-full bg-brand-orange hover:bg-[#e06313] text-white font-bold text-xs tracking-[0.15em] flex items-center justify-center gap-3 transition-all duration-300 uppercase shadow-lg shadow-brand-orange/20 hover:shadow-brand-orange/35 hover:-translate-y-0.5"
+              >
+                <span>Talk to our Specialists</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+
+              <!-- Modern Outline Button -->
+              <a
+                href="#treatments"
+                class="px-8 py-4 rounded-full border border-brand-blue/20 hover:border-brand-orange text-brand-blue hover:text-brand-orange font-bold text-xs tracking-[0.15em] transition-all duration-300 uppercase text-center"
+              >
+                Our Treatments
+              </a>
+            </div>
+
+            <!-- Rating -->
+            <div class="flex items-center gap-3 mt-6">
+              <div class="flex text-brand-orange text-xs gap-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs font-bold text-brand-blue tracking-wide">
+                4.8
+                <span class="text-gray-400 font-normal"
+                  >/ 5.0 (12k+ Google reviews)</span
+                >
+              </span>
+            </div>
+
+            <!-- Small Up Arrow Button Floating Bottom Right corner -->
+            <button
+              class="absolute -bottom-16 -right-16 w-10 h-10 rounded-full bg-brand-blue text-white shadow-lg flex items-center justify-center hover:bg-brand-orange transition hidden lg:flex"
+            >
+              <i class="fa-solid fa-arrow-up text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: DARK BLUE RIBBON MARQUEE -->
+    <section class="bg-brand-blue py-5 text-white border-y border-white/20">
+      <div
+        class="marquee-container text-xl md:text-2xl font-medium tracking-wide"
+      >
+        <div class="marquee-content inline-flex items-center gap-12 pr-12">
+          <!-- Group 1 -->
+          <span>Bodycare</span>
+          <i class="fa-solid fa-star-of-life text-white text-[12px]"></i>
+          <span>Skincare</span>
+          <i class="fa-solid fa-star-of-life text-white text-[12px]"></i>
+          <span>Accessories</span>
+          <i class="fa-solid fa-star-of-life text-white text-[12px]"></i>
+          <span>Haircare</span>
+          <i class="fa-solid fa-star-of-life text-white text-[12px]"></i>
+          <span>Nailcare</span>
+          <i class="fa-solid fa-star-of-life text-white text-[12px]"></i>
+          <span>Beautycare</span>
+          <i class="fa-solid fa-star-of-life text-white text-[12px]"></i>
+          <!-- Group 2 (Duplicate for seamless loop) -->
+          <span>Bodycare</span>
+          <i class="fa-solid fa-star-of-life text-white text-[12px]"></i>
+          <span>Skincare</span>
+          <i class="fa-solid fa-star-of-life text-white text-[12px]"></i>
+          <span>Accessories</span>
+          <i class="fa-solid fa-star-of-life text-white text-[12px]"></i>
+          <span>Haircare</span>
+          <i class="fa-solid fa-star-of-life text-white text-[12px]"></i>
+          <span>Nailcare</span>
+          <i class="fa-solid fa-star-of-life text-white text-[12px]"></i>
+          <span>Beautycare</span>
+          <i class="fa-solid fa-star-of-life text-white text-[12px]"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ADVANCED DERMATOLOGY TREATMENTS (Accordion) -->
+    <section class="py-20 bg-brand-cream text-center" id="treatments">
+      <div class="container mx-auto px-4 md:px-12 w-[90%] max-w-[1600px]">
+        <h2
+          class="text-2xl sm:text-3xl md:text-[42px] font-extrabold text-brand-blue mb-4 leading-[1.3] md:leading-[1.2] max-w-3xl mx-auto"
+        >
+          Transform Your Skin With Our <span class="text-brand-orange block sm:inline mt-1 sm:mt-0">Advanced Dermatology Treatments</span>
+        </h2>
+        <p class="text-gray-500 mb-12 text-sm max-w-2xl mx-auto">
+          Experience a transformative journey that sculpts your physique and
+          unlocks your full potential.
+        </p>
+
+        <div class="flex flex-col md:flex-row md:h-[500px] gap-4 w-full accordion-container">
+          <!-- CARD 1: Melasma Treatment -->
+          <div
+            class="treatment-card group relative rounded-xl overflow-hidden transition-all duration-500 ease-in-out cursor-pointer flex-1 bg-gray-800 border border-gray-100"
+            onmouseenter="activateCard(0)"
+          >
+            <img
+              src="melasma_indian_face.png"
+              class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60"
+            />
+            <div
+              class="card-overlay absolute inset-0 bg-brand-blue/80 transition duration-300"
+            ></div>
+
+            <!-- Collapsed View -->
+            <div
+              class="collapsed-content flex flex-col h-full items-center justify-between py-6 relative z-10 transition-opacity duration-300"
+            >
+              <button
+                class="w-10 h-10 rounded-full bg-white text-brand-blue flex items-center justify-center shadow-md font-bold"
+              >
+                <i class="fa-solid fa-arrow-up text-sm rotate-45"></i>
+              </button>
+              <h3
+                class="text-white font-medium text-lg whitespace-nowrap -rotate-90 origin-center translate-y-16 tracking-wide"
+              >
+                Melasma Treatment
+              </h3>
+              <div class="text-white/20 font-extrabold text-5xl">01</div>
+            </div>
+
+            <!-- Expanded View -->
+            <div
+              class="expanded-content hidden w-full h-full bg-white flex flex-col md:flex-row p-4 items-center gap-8 relative z-20"
+            >
+              <div
+                class="w-full md:w-1/2 h-full rounded-xl overflow-hidden relative"
+              >
+                <img
+                  src="melasma_indian_face.png"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-lg text-xs font-bold text-brand-orange shadow flex items-center gap-2"
+                >
+                  <i class="fa-regular fa-calendar-check"></i>
+                  <span class="text-brand-blue">Book An appointment</span>
+                </div>
+              </div>
+              <div
+                class="w-full md:w-1/2 text-left relative flex flex-col justify-center pr-4"
+              >
+                <div
+                  class="absolute top-1/2 -translate-y-1/2 right-0 text-gray-100 font-extrabold text-[120px] leading-none -z-10 pointer-events-none"
+                >
+                  01
+                </div>
+                <h3 class="text-2xl font-extrabold text-brand-blue mb-4">
+                  Melasma Treatment
+                </h3>
+                <p class="text-gray-500 text-xs leading-relaxed mb-6">
+                  Effectively target stubborn dark spots and hyperpigmentation.
+                  Our customized clinical peels, advanced Q-switched lasers, and
+                  tailored topical therapies work to regulate melanin production
+                  and restore an even, luminous skin tone.
+                </p>
+                <ul class="space-y-2 mb-8">
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Targeted Chemical Peels
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Advanced Q-Switched Laser
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Melanin Control Formulations
+                  </li>
+                </ul>
+                <div class="flex items-center justify-between mt-auto">
+                  <div class="flex items-center gap-3">
+                    <img
+                      src="saniaimage.jpeg"
+                      class="w-10 h-10 rounded-full object-cover border border-gray-200 bg-gray-50"
+                    />
+                    <div>
+                      <h4 class="font-bold text-brand-blue text-xs">
+                        Dr. Sania
+                      </h4>
+                      <p class="text-brand-orange text-[9px] font-bold">
+                        Dermatologist
+                      </p>
+                    </div>
+                  </div>
+                  <a href="tel:+919990035533"
+                    class="w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center hover:bg-[#E06313] transition shadow-md"
+                  >
+                    <i class="fa-solid fa-arrow-up text-sm rotate-45"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: Hair Fall Treatment -->
+          <div
+            class="treatment-card group relative rounded-xl overflow-hidden transition-all duration-500 ease-in-out cursor-pointer flex-1 bg-gray-800 border border-gray-100"
+            onmouseenter="activateCard(1)"
+          >
+            <img
+              src="hairfall_treatment_girl.png"
+              class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60"
+            />
+            <div
+              class="card-overlay absolute inset-0 bg-brand-blue/80 transition duration-300"
+            ></div>
+
+            <!-- Collapsed View -->
+            <div
+              class="collapsed-content flex flex-col h-full items-center justify-between py-6 relative z-10 transition-opacity duration-300"
+            >
+              <button
+                class="w-10 h-10 rounded-full bg-white text-brand-blue flex items-center justify-center shadow-md font-bold"
+              >
+                <i class="fa-solid fa-arrow-up text-sm rotate-45"></i>
+              </button>
+              <h3
+                class="text-white font-medium text-lg whitespace-nowrap -rotate-90 origin-center translate-y-16 tracking-wide"
+              >
+                Hair Fall Treatment
+              </h3>
+              <div class="text-white/20 font-extrabold text-5xl">02</div>
+            </div>
+
+            <!-- Expanded View -->
+            <div
+              class="expanded-content hidden w-full h-full bg-white flex flex-col md:flex-row p-4 items-center gap-8 relative z-20"
+            >
+              <div
+                class="w-full md:w-1/2 h-full rounded-xl overflow-hidden relative"
+              >
+                <img
+                  src="hairfall_treatment_girl.png"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-lg text-xs font-bold text-brand-orange shadow flex items-center gap-2"
+                >
+                  <i class="fa-regular fa-calendar-check"></i>
+                  <span class="text-brand-blue">Book An appointment</span>
+                </div>
+              </div>
+              <div
+                class="w-full md:w-1/2 text-left relative flex flex-col justify-center pr-4"
+              >
+                <div
+                  class="absolute top-1/2 -translate-y-1/2 right-0 text-gray-100 font-extrabold text-[120px] leading-none -z-10 pointer-events-none"
+                >
+                  02
+                </div>
+                <h3 class="text-2xl font-extrabold text-brand-blue mb-4">
+                  Hair Fall Treatment
+                </h3>
+                <p class="text-gray-500 text-xs leading-relaxed mb-6">
+                  Combat hair thinning and hair fall with advanced regenerative
+                  therapies. We offer growth factor treatments, Platelet-Rich
+                  Plasma (PRP) scalp therapy, and nourishing micro-nutrients to
+                  strengthen follicles and stimulate natural regrowth.
+                </p>
+                <ul class="space-y-2 mb-8">
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Regenerative PRP Therapy
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Growth Factor Scalp Micro-Infusion
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Follicular Strengthening System
+                  </li>
+                </ul>
+                <div class="flex items-center justify-between mt-auto">
+                  <div class="flex items-center gap-3">
+                    <img
+                      src="saniaimage.jpeg"
+                      class="w-10 h-10 rounded-full object-cover border border-gray-200 bg-gray-50"
+                    />
+                    <div>
+                      <h4 class="font-bold text-brand-blue text-xs">
+                        Dr. Sania
+                      </h4>
+                      <p class="text-brand-orange text-[9px] font-bold">
+                        Trichologist & Dermatologist
+                      </p>
+                    </div>
+                  </div>
+                  <a href="tel:+919990035533"
+                    class="w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center hover:bg-[#E06313] transition shadow-md"
+                  >
+                    <i class="fa-solid fa-arrow-up text-sm rotate-45"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3: Scars Treatment -->
+          <div
+            class="treatment-card group relative rounded-xl overflow-hidden transition-all duration-500 ease-in-out cursor-pointer flex-1 bg-gray-800 border border-gray-100"
+            onmouseenter="activateCard(2)"
+          >
+            <img
+              src="scars_treatment_girl.png"
+              class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60"
+            />
+            <div
+              class="card-overlay absolute inset-0 bg-brand-blue/80 transition duration-300"
+            ></div>
+
+            <!-- Collapsed View -->
+            <div
+              class="collapsed-content flex flex-col h-full items-center justify-between py-6 relative z-10 transition-opacity duration-300"
+            >
+              <button
+                class="w-10 h-10 rounded-full bg-white text-brand-blue flex items-center justify-center shadow-md font-bold"
+              >
+                <i class="fa-solid fa-arrow-up text-sm rotate-45"></i>
+              </button>
+              <h3
+                class="text-white font-medium text-lg whitespace-nowrap -rotate-90 origin-center translate-y-16 tracking-wide"
+              >
+                Scars Treatment
+              </h3>
+              <div class="text-white/20 font-extrabold text-5xl">03</div>
+            </div>
+
+            <!-- Expanded View -->
+            <div
+              class="expanded-content hidden w-full h-full bg-white flex flex-col md:flex-row p-4 items-center gap-8 relative z-20"
+            >
+              <div
+                class="w-full md:w-1/2 h-full rounded-xl overflow-hidden relative"
+              >
+                <img
+                  src="scars_treatment_girl.png"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-lg text-xs font-bold text-brand-orange shadow flex items-center gap-2"
+                >
+                  <i class="fa-regular fa-calendar-check"></i>
+                  <span class="text-brand-blue">Book An appointment</span>
+                </div>
+              </div>
+              <div
+                class="w-full md:w-1/2 text-left relative flex flex-col justify-center pr-4"
+              >
+                <div
+                  class="absolute top-1/2 -translate-y-1/2 right-0 text-gray-100 font-extrabold text-[120px] leading-none -z-10 pointer-events-none"
+                >
+                  03
+                </div>
+                <h3 class="text-2xl font-extrabold text-brand-blue mb-4">
+                  Scars Treatment
+                </h3>
+                <p class="text-gray-500 text-xs leading-relaxed mb-6">
+                  Diminish acne scars, surgical scars, and stretch marks. Using
+                  a combination of fractional CO2 lasers, RF microneedling, and
+                  subcision, we rebuild collagen and remodel scar tissue for a
+                  smoother skin texture.
+                </p>
+                <ul class="space-y-2 mb-8">
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Fractional CO2 Laser Resurfacing
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    RF Microneedling & Subcision
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Collagen Remodeling Therapy
+                  </li>
+                </ul>
+                <div class="flex items-center justify-between mt-auto">
+                  <div class="flex items-center gap-3">
+                    <img
+                      src="saniaimage.jpeg"
+                      class="w-10 h-10 rounded-full object-cover border border-gray-200 bg-gray-50"
+                    />
+                    <div>
+                      <h4 class="font-bold text-brand-blue text-xs">
+                        Dr. Sania
+                      </h4>
+                      <p class="text-brand-orange text-[9px] font-bold">
+                        Cosmetic Surgeon
+                      </p>
+                    </div>
+                  </div>
+                  <a href="tel:+919990035533"
+                    class="w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center hover:bg-[#E06313] transition shadow-md"
+                  >
+                    <i class="fa-solid fa-arrow-up text-sm rotate-45"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4: Face Lifting -->
+          <div
+            class="treatment-card group relative rounded-xl overflow-hidden transition-all duration-500 ease-in-out cursor-pointer flex-1 bg-gray-800 border border-gray-100"
+            onmouseenter="activateCard(3)"
+          >
+            <img
+              src="facelifting_treatment_girl.png"
+              class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60"
+            />
+            <div
+              class="card-overlay absolute inset-0 bg-brand-blue/80 transition duration-300"
+            ></div>
+
+            <!-- Collapsed View -->
+            <div
+              class="collapsed-content flex flex-col h-full items-center justify-between py-6 relative z-10 transition-opacity duration-300"
+            >
+              <button
+                class="w-10 h-10 rounded-full bg-white text-brand-blue flex items-center justify-center shadow-md font-bold"
+              >
+                <i class="fa-solid fa-arrow-up text-sm rotate-45"></i>
+              </button>
+              <h3
+                class="text-white font-medium text-lg whitespace-nowrap -rotate-90 origin-center translate-y-16 tracking-wide"
+              >
+                Face Lifting
+              </h3>
+              <div class="text-white/20 font-extrabold text-5xl">04</div>
+            </div>
+
+            <!-- Expanded View -->
+            <div
+              class="expanded-content hidden w-full h-full bg-white flex flex-col md:flex-row p-4 items-center gap-8 relative z-20"
+            >
+              <div
+                class="w-full md:w-1/2 h-full rounded-xl overflow-hidden relative"
+              >
+                <img
+                  src="facelifting_treatment_girl.png"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-lg text-xs font-bold text-brand-orange shadow flex items-center gap-2"
+                >
+                  <i class="fa-regular fa-calendar-check"></i>
+                  <span class="text-brand-blue">Book An appointment</span>
+                </div>
+              </div>
+              <div
+                class="w-full md:w-1/2 text-left relative flex flex-col justify-center pr-4"
+              >
+                <div
+                  class="absolute top-1/2 -translate-y-1/2 right-0 text-gray-100 font-extrabold text-[120px] leading-none -z-10 pointer-events-none"
+                >
+                  04
+                </div>
+                <h3 class="text-2xl font-extrabold text-brand-blue mb-4">
+                  Face Lifting
+                </h3>
+                <p class="text-gray-500 text-xs leading-relaxed mb-6">
+                  Restore youthfulness and skin elasticity with non-surgical
+                  lifting techniques. We utilize High-Intensity Focused
+                  Ultrasound (HIFU), skin-tightening thread lifts, and advanced
+                  radiofrequency to contour the jawline and lift sagging skin.
+                </p>
+                <ul class="space-y-2 mb-8">
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    HIFU Skin Tightening
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Collagen-Boosting Thread Lifts
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Radiofrequency V-Shaping
+                  </li>
+                </ul>
+                <div class="flex items-center justify-between mt-auto">
+                  <div class="flex items-center gap-3">
+                    <img
+                      src="saniaimage.jpeg"
+                      class="w-10 h-10 rounded-full object-cover border border-gray-200 bg-gray-50"
+                    />
+                    <div>
+                      <h4 class="font-bold text-brand-blue text-xs">
+                        Dr. Sania
+                      </h4>
+                      <p class="text-brand-orange text-[9px] font-bold">
+                        Anti-Aging Expert
+                      </p>
+                    </div>
+                  </div>
+                  <a href="tel:+919990035533"
+                    class="w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center hover:bg-[#E06313] transition shadow-md"
+                  >
+                    <i class="fa-solid fa-arrow-up text-sm rotate-45"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 5: Skin Rejuvenation -->
+          <div
+            class="treatment-card group relative rounded-xl overflow-hidden transition-all duration-500 ease-in-out cursor-pointer flex-1 bg-gray-800 border border-gray-100"
+            onmouseenter="activateCard(4)"
+          >
+            <img
+              src="rejuvenation_treatment_girl.png"
+              class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60"
+            />
+            <div
+              class="card-overlay absolute inset-0 bg-brand-blue/80 transition duration-300"
+            ></div>
+
+            <!-- Collapsed View -->
+            <div
+              class="collapsed-content flex flex-col h-full items-center justify-between py-6 relative z-10 transition-opacity duration-300"
+            >
+              <button
+                class="w-10 h-10 rounded-full bg-white text-brand-blue flex items-center justify-center shadow-md font-bold"
+              >
+                <i class="fa-solid fa-arrow-up text-sm rotate-45"></i>
+              </button>
+              <h3
+                class="text-white font-medium text-lg whitespace-nowrap -rotate-90 origin-center translate-y-16 tracking-wide"
+              >
+                Skin Rejuvenation
+              </h3>
+              <div class="text-white/20 font-extrabold text-5xl">05</div>
+            </div>
+
+            <!-- Expanded View -->
+            <div
+              class="expanded-content hidden w-full h-full bg-white flex flex-col md:flex-row p-4 items-center gap-8 relative z-20"
+            >
+              <div
+                class="w-full md:w-1/2 h-full rounded-xl overflow-hidden relative"
+              >
+                <img
+                  src="rejuvenation_treatment_girl.png"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-lg text-xs font-bold text-brand-orange shadow flex items-center gap-2"
+                >
+                  <i class="fa-regular fa-calendar-check"></i>
+                  <span class="text-brand-blue">Book An appointment</span>
+                </div>
+              </div>
+              <div
+                class="w-full md:w-1/2 text-left relative flex flex-col justify-center pr-4"
+              >
+                <div
+                  class="absolute top-1/2 -translate-y-1/2 right-0 text-gray-100 font-extrabold text-[120px] leading-none -z-10 pointer-events-none"
+                >
+                  05
+                </div>
+                <h3 class="text-2xl font-extrabold text-brand-blue mb-4">
+                  Skin Rejuvenation
+                </h3>
+                <p class="text-gray-500 text-xs leading-relaxed mb-6">
+                  Revitalize dull, tired skin and combat signs of aging. Our
+                  bespoke medical facials, nutrient-rich IV therapy, and premium
+                  hydration peels deeply nourish the skin, leaving you with an
+                  instant, long-lasting glow.
+                </p>
+                <ul class="space-y-2 mb-8">
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Bespoke Hydrafacials & Peels
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Nutrient-Rich IV Glow Drip
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-xs font-bold text-brand-blue"
+                  >
+                    <i
+                      class="fa-solid fa-circle-check text-brand-orange text-sm"
+                    ></i>
+                    Instant Radiance & Hydration
+                  </li>
+                </ul>
+                <div class="flex items-center justify-between mt-auto">
+                  <div class="flex items-center gap-3">
+                    <img
+                      src="saniaimage.jpeg"
+                      class="w-10 h-10 rounded-full object-cover border border-gray-200 bg-gray-50"
+                    />
+                    <div>
+                      <h4 class="font-bold text-brand-blue text-xs">
+                        Dr. Sania
+                      </h4>
+                      <p class="text-brand-orange text-[9px] font-bold">
+                        Aesthetic Cosmetologist
+                      </p>
+                    </div>
+                  </div>
+                  <a href="tel:+919990035533"
+                    class="w-10 h-10 rounded-full bg-brand-orange text-white flex items-center justify-center hover:bg-[#E06313] transition shadow-md"
+                  >
+                    <i class="fa-solid fa-arrow-up text-sm rotate-45"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JavaScript for Accordion Interactivity -->
+        <script>
+          function activateCard(index) {
+            const cards = document.querySelectorAll(".treatment-card");
+            cards.forEach((card, i) => {
+              const collapsed = card.querySelector(".collapsed-content");
+              const expanded = card.querySelector(".expanded-content");
+              const overlay = card.querySelector(".card-overlay");
+
+              if (i === index) {
+                card.style.flex = "5";
+                collapsed.classList.add("hidden");
+                expanded.classList.remove("hidden");
+                expanded.classList.add("flex");
+                if (overlay) overlay.style.opacity = "0";
+              } else {
+                card.style.flex = "1";
+                collapsed.classList.remove("hidden");
+                expanded.classList.add("hidden");
+                expanded.classList.remove("flex");
+                if (overlay) overlay.style.opacity = "1";
+              }
+            });
+          }
+
+          // Initialize the last card as expanded on page load
+          document.addEventListener("DOMContentLoaded", () => {
+            activateCard(4);
+          });
+        </script>
+      </div>
+    </section>
+
+    <!-- ==========================================
+          BEFORE & AFTER GALLERY
+          ========================================== -->
+    <section class="py-12 md:py-24 bg-[#F9F5F3]" data-aos="fade-up">
+      <div class="container mx-auto px-4 md:px-12">
+        <!-- Section Header -->
+        <div class="text-center mb-8 md:mb-16 max-w-3xl mx-auto">
+          <span
+            class="text-brand-clay font-bold tracking-[0.4em] text-[10px] mb-4 block uppercase"
+            >Our Portfolio</span
+          >
+          <h2
+            class="text-4xl md:text-5xl font-bold text-brand-dark mb-6 tracking-tight uppercase"
+          >
+            Real Time Before & After Gallery
+          </h2>
+          <p
+            class="text-gray-500 text-sm md:text-base leading-relaxed font-light"
+          >
+            View our portfolio of real clinical transformations. Authentic
+            results demonstrating the power of precision-targeted cosmetology.
+          </p>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Comparison Item 1: Melasma -->
+          <div
+            class="relative group overflow-hidden shadow-2xl rounded-2xl border border-gray-100 aspect-[4/3] before-after-container"
+            data-slider-pos="50"
+          >
+            <!-- Floating Service Label -->
+            <div
+              class="absolute top-4 left-4 z-30 bg-brand-blue/90 backdrop-blur-md text-white text-[10px] font-bold tracking-[0.2em] uppercase px-4 py-2 rounded-full shadow-lg"
+            >
+              Melasma Treatment
+            </div>
+
+            <div class="absolute inset-0 select-none">
+              <!-- Before Image -->
+              <img
+                src="melasma_before.png"
+                class="absolute inset-0 w-full h-full object-cover"
+                alt="Before Melasma"
+              />
+              <!-- Before Badge -->
+              <div
+                class="absolute bottom-4 left-4 z-10 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-md"
+              >
+                Before
+              </div>
+
+              <!-- After Image (Clipped) -->
+              <div
+                class="absolute inset-0 after-image"
+                style="clip-path: inset(0 0 0 50%)"
+              >
+                <img
+                  src="melasma_after.png"
+                  class="absolute inset-0 w-full h-full object-cover"
+                  alt="After Melasma"
+                />
+                <!-- After Badge -->
+                <div
+                  class="absolute bottom-4 right-4 z-10 bg-brand-orange/95 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-md"
+                >
+                  After
+                </div>
+              </div>
+            </div>
+
+            <!-- Drag Handle -->
+            <div
+              class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[2px] bg-brand-orange flex items-center justify-center slider-handle cursor-ew-resize z-30"
+            >
+              <div
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-2xl border-2 border-brand-orange hover:scale-115 transition-transform duration-300"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#F37324"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m18 8 4 4-4 4" />
+                  <path d="m6 8-4 4 4 4" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Overlay for Mouse Interaction -->
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize slider-input z-40"
+            />
+          </div>
+
+          <!-- Comparison Item 2: Acne Treatment -->
+          <div
+            class="relative group overflow-hidden shadow-2xl rounded-2xl border border-gray-100 aspect-[4/3] before-after-container"
+            data-slider-pos="50"
+          >
+            <!-- Floating Service Label -->
+            <div
+              class="absolute top-4 left-4 z-30 bg-brand-blue/90 backdrop-blur-md text-white text-[10px] font-bold tracking-[0.2em] uppercase px-4 py-2 rounded-full shadow-lg"
+            >
+              Acne Treatment
+            </div>
+
+            <div class="absolute inset-0 select-none">
+              <!-- Before Image -->
+              <img
+                src="acne_before.png"
+                class="absolute inset-0 w-full h-full object-cover"
+                alt="Before Acne Treatment"
+              />
+              <!-- Before Badge -->
+              <div
+                class="absolute bottom-4 left-4 z-10 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-md"
+              >
+                Before
+              </div>
+
+              <!-- After Image (Clipped) -->
+              <div
+                class="absolute inset-0 after-image"
+                style="clip-path: inset(0 0 0 50%)"
+              >
+                <img
+                  src="acne_after.png"
+                  class="absolute inset-0 w-full h-full object-cover"
+                  alt="After Acne Treatment"
+                />
+                <!-- After Badge -->
+                <div
+                  class="absolute bottom-4 right-4 z-10 bg-brand-orange/95 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-md"
+                >
+                  After
+                </div>
+              </div>
+            </div>
+
+            <!-- Drag Handle -->
+            <div
+              class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[2px] bg-brand-orange flex items-center justify-center slider-handle cursor-ew-resize z-30"
+            >
+              <div
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-2xl border-2 border-brand-orange hover:scale-115 transition-transform duration-300"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#F37324"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m18 8 4 4-4 4" />
+                  <path d="m6 8-4 4 4 4" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Overlay for Mouse Interaction -->
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize slider-input z-40"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5.5: CLINICAL TRANSFORMATION GALLERY -->
+    <section class="py-24 bg-[#FCFAF7] overflow-hidden relative" id="gallery">
+      <!-- Layer 1: Huge Backdrop Text -->
+      <div
+        class="absolute top-10 left-0 w-full text-center pointer-events-none select-none z-0"
+      >
+        <h2
+          class="text-[70px] sm:text-[110px] md:text-[180px] font-serif font-extrabold text-gray-200/40 tracking-widest uppercase leading-none select-none"
+        >
+          GALLERY
+        </h2>
+      </div>
+
+      <div
+        class="container mx-auto px-4 w-[95%] max-w-[1200px] relative z-10 min-h-[500px] md:min-h-[700px] flex flex-col justify-between"
+      >
+        <!-- Header & Main Face Block -->
+        <div
+          class="relative w-full flex flex-col items-center z-10 mt-4 sm:mt-8 md:mt-12"
+        >
+          <!-- Text on Left (Overlapping position on desktop, centered on mobile) -->
+          <div
+            class="w-full md:absolute md:left-[5%] md:top-[20%] lg:left-[8%] lg:top-[25%] z-20 text-center md:text-left mb-8 md:mb-0"
+          >
+            <h3
+              class="text-3xl sm:text-4xl md:text-[42px] lg:text-[52px] font-serif text-[#1e293b] leading-[1.25] tracking-tight font-medium"
+            >
+              Your Trusted,<br />
+              <span class="font-normal">Clinically</span>
+            </h3>
+          </div>
+
+          <!-- Beautiful Portrait in Center/Right -->
+          <div
+            class="w-[260px] sm:w-[320px] md:w-[420px] aspect-[4/5] mx-auto z-10 relative overflow-hidden rounded-t-[120px] sm:rounded-t-[180px] rounded-b-none shadow-2xl shadow-brand-blue/5"
+          >
+            <img
+              src="gallery_hero_indian.png"
+              class="w-full h-full object-cover object-center scale-105"
+              alt="Aastra Beauty Portrait"
+            />
+          </div>
+        </div>
+
+        <!-- Row of 4 Clinical Skincare Photos (Overlapping at the bottom) -->
+        <div
+          class="relative z-30 w-full -mt-16 sm:-mt-24 md:-mt-32 max-w-[950px] mx-auto"
+        >
+          <div
+            id="lightgallery-gallery"
+            class="grid grid-cols-4 gap-2 sm:gap-4 md:gap-6"
+          >
+            <!-- Card 1 -->
+            <a
+              href="acne_before.png"
+              class="bg-white p-1 md:p-1.5 rounded-lg md:rounded-2xl shadow-2xl border border-white/60 aspect-[3/4] overflow-hidden hover:scale-105 transition-transform duration-300 block cursor-pointer"
+            >
+              <img
+                src="acne_before.png"
+                class="w-full h-full object-cover rounded-md md:rounded-xl"
+                alt="Clinical Treatment"
+              />
+            </a>
+
+            <!-- Card 2 -->
+            <a
+              href="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=600&auto=format&fit=crop"
+              class="bg-white p-1 md:p-1.5 rounded-lg md:rounded-2xl shadow-2xl border border-white/60 aspect-[3/4] overflow-hidden hover:scale-105 transition-transform duration-300 block cursor-pointer"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=600&auto=format&fit=crop"
+                class="w-full h-full object-cover rounded-md md:rounded-xl"
+                alt="Product Application"
+              />
+            </a>
+
+            <!-- Card 3 -->
+            <a
+              href="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&auto=format&fit=crop"
+              class="bg-white p-1 md:p-1.5 rounded-lg md:rounded-2xl shadow-2xl border border-white/60 aspect-[3/4] overflow-hidden hover:scale-105 transition-transform duration-300 block cursor-pointer"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&auto=format&fit=crop"
+                class="w-full h-full object-cover rounded-md md:rounded-xl"
+                alt="Facial Care"
+              />
+            </a>
+
+            <!-- Card 4 -->
+            <a
+              href="melasma_after.png"
+              class="bg-white p-1 md:p-1.5 rounded-lg md:rounded-2xl shadow-2xl border border-white/60 aspect-[3/4] overflow-hidden hover:scale-105 transition-transform duration-300 block cursor-pointer"
+            >
+              <img
+                src="melasma_after.png"
+                class="w-full h-full object-cover rounded-md md:rounded-xl"
+                alt="Skin Analysis"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6.5: WHY CHOOSE US (HIGH-CONVERTING TRUST & BRAND PILLARS) -->
+    <section
+      class="py-24 bg-white overflow-hidden"
+      id="why-choose-us"
+      data-aos="fade-up"
+    >
+      <div class="container mx-auto px-4 md:px-12 w-[90%] max-w-[1600px]">
+        <div class="flex flex-col lg:flex-row gap-16 items-center">
+          <!-- Left Content Column -->
+          <div class="w-full lg:w-7/12 space-y-8" data-aos="fade-right">
+            <!-- Header Block -->
+            <div class="space-y-4">
+              <span
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-bold uppercase tracking-wider"
+              >
+                <i
+                  class="fa-solid fa-star-of-life text-[9px] animate-spin-slow"
+                ></i>
+                WHY CHOOSE AASTRA AESTHETIC
+              </span>
+              <h2
+                class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-blue leading-tight"
+              >
+                The Trusted Choice for <br class="hidden md:inline" />Medical
+                Skin & Hair Care
+              </h2>
+              <p
+                class="text-brand-gray text-sm md:text-base leading-relaxed max-w-2xl"
+              >
+                Led by
+                <strong class="text-brand-blue font-bold">Dr. Sania</strong>,
+                Aastra Aesthetic is a premier clinic specializing in
+                science-backed dermatology and laser procedures. We blend
+                clinical precision with premium patient care to restore your
+                skin's health and confidence.
+              </p>
+            </div>
+
+            <!-- Trust Pillars Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Pillar 1: Certified Experts -->
+              <div
+                class="flex gap-4 p-5 rounded-2xl bg-brand-cream/40 border border-brand-cream/85 hover:border-brand-orange/30 hover:bg-white hover:shadow-md transition-all duration-300 group"
+              >
+                <div
+                  class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300"
+                >
+                  <i class="fa-solid fa-user-doctor text-xl"></i>
+                </div>
+                <div class="space-y-1">
+                  <h4 class="text-sm font-extrabold text-brand-blue">
+                    Board-Certified Specialists
+                  </h4>
+                  <p class="text-brand-gray text-xs leading-relaxed">
+                    Direct medical oversight by Dr. Sania and clinical
+                    dermatologists with years of expertise.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Pillar 2: FDA Approved Tech -->
+              <div
+                class="flex gap-4 p-5 rounded-2xl bg-brand-cream/40 border border-brand-cream/85 hover:border-brand-orange/30 hover:bg-white hover:shadow-md transition-all duration-300 group"
+              >
+                <div
+                  class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-orange/5 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-all duration-300"
+                >
+                  <i class="fa-solid fa-award text-xl"></i>
+                </div>
+                <div class="space-y-1">
+                  <h4 class="text-sm font-extrabold text-brand-blue">
+                    US-FDA Approved Lasers
+                  </h4>
+                  <p class="text-brand-gray text-xs leading-relaxed">
+                    Safety is our priority. We only use certified gold-standard
+                    technologies for all treatments.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Pillar 3: Bespoke Plans -->
+              <div
+                class="flex gap-4 p-5 rounded-2xl bg-brand-cream/40 border border-brand-cream/85 hover:border-brand-orange/30 hover:bg-white hover:shadow-md transition-all duration-300 group"
+              >
+                <div
+                  class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-orange/5 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-all duration-300"
+                >
+                  <i class="fa-solid fa-sliders text-xl"></i>
+                </div>
+                <div class="space-y-1">
+                  <h4 class="text-sm font-extrabold text-brand-blue">
+                    Personalized Skin Plans
+                  </h4>
+                  <p class="text-brand-gray text-xs leading-relaxed">
+                    No generic routines. Every prescription and treatment is
+                    tailor-made for your unique skin needs.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Pillar 4: Luxury Experience -->
+              <div
+                class="flex gap-4 p-5 rounded-2xl bg-brand-cream/40 border border-brand-cream/85 hover:border-brand-orange/30 hover:bg-white hover:shadow-md transition-all duration-300 group"
+              >
+                <div
+                  class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300"
+                >
+                  <i class="fa-solid fa-spa text-xl"></i>
+                </div>
+                <div class="space-y-1">
+                  <h4 class="text-sm font-extrabold text-brand-blue">
+                    5-Star Luxury Care
+                  </h4>
+                  <p class="text-brand-gray text-xs leading-relaxed">
+                    Relax in a state-of-the-art clinic that emphasizes hygiene,
+                    client comfort, and full privacy.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Call to Actions -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+              <a
+                href="tel:+919990035533"
+                class="btn-orange px-8 py-3.5 text-xs tracking-wider flex items-center gap-2 hover:bg-[#e06313] transition-all duration-300 shadow-md hover:shadow-lg w-full sm:w-auto justify-center"
+              >
+                Book Free Consultation
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+              <a
+                href="tel:+919990035533"
+                class="btn-outline border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-3.5 text-xs tracking-wider flex items-center gap-2 transition-all duration-300 w-full sm:w-auto justify-center"
+              >
+                <i class="fa-solid fa-phone text-[10px]"></i> Call Aesthetic
+                Experts
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Visual Column -->
+          <div
+            class="w-full lg:w-5/12 relative flex justify-center lg:justify-end"
+            data-aos="fade-left"
+          >
+            <!-- Main Image Wrapper -->
+            <div class="relative w-full max-w-[420px] mr-0 lg:mr-6">
+              <!-- Soft background decorative glow circles -->
+              <div
+                class="absolute -top-10 -left-10 w-40 h-40 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none"
+              ></div>
+              <div
+                class="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none"
+              ></div>
+
+              <!-- Premium Image Frame with asymmetric borders -->
+              <div
+                class="relative z-10 rounded-[2rem] rounded-tr-[5rem] rounded-bl-[5rem] overflow-hidden border-8 border-brand-cream shadow-2xl"
+              >
+                <img
+                  src="why_choose_us_clinic.png"
+                  alt="Clinical Skincare Consultation at Aastra Aesthetic"
+                  class="w-full h-[360px] sm:h-[460px] lg:h-[520px] object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <!-- Subtle overlay on hover -->
+                <div
+                  class="absolute inset-0 bg-brand-blue/5 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                ></div>
+              </div>
+
+              <!-- Floating Stats Card (Bottom-Left overlap) -->
+              <div
+                class="absolute -bottom-6 -left-4 sm:-left-8 lg:-left-12 z-20 bg-white p-5 rounded-2xl shadow-xl border border-gray-100/90 flex items-center gap-4 max-w-[280px] animate-float"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-500"
+                >
+                  <svg
+                    class="w-7 h-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h5 class="text-sm font-extrabold text-brand-blue">
+                    99.4% Success Rate
+                  </h5>
+                  <p class="text-[10px] text-brand-gray/80 leading-snug">
+                    Over 12k+ clinically successful treatments.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Floating Trust Badge (Top-Right overlap) -->
+              <div
+                class="absolute -top-6 -right-4 sm:-right-8 lg:-right-6 z-20 bg-brand-blue text-white py-3 px-5 rounded-2xl shadow-xl flex items-center gap-3 border border-brand-blue/10 animate-float"
+                style="animation-delay: 1.5s"
+              >
+                <div
+                  class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-award text-brand-orange text-sm"></i>
+                </div>
+                <div>
+                  <span
+                    class="block text-[8px] uppercase tracking-widest text-brand-cream/70 font-bold"
+                    >FDA APPROVED</span
+                  >
+                  <span class="block text-xs font-extrabold text-white"
+                    >Gold-Standard Lasers</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: FAQ & IMAGES -->
+    <section
+      class="py-24 bg-brand-cream overflow-hidden relative"
+      id="faq-section"
+    >
+      <!-- Background decorative blobs -->
+      <div
+        class="absolute -top-20 -left-20 w-72 h-72 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div
+        class="absolute -bottom-20 -right-20 w-72 h-72 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none"
+      ></div>
+
+      <div
+        class="container mx-auto px-4 md:px-12 w-[90%] max-w-[1600px] relative z-10"
+      >
+        <div class="flex flex-col lg:flex-row gap-16 items-center">
+          <!-- Left: FAQ Accordion -->
+          <div class="w-full lg:w-1/2 space-y-8" data-aos="fade-right">
+            <div class="space-y-3">
+              <span
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-bold uppercase tracking-wider"
+              >
+                <i class="fa-solid fa-circle-question text-[10px]"></i> COMMON
+                INQUIRIES
+              </span>
+              <h2
+                class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-blue leading-tight"
+              >
+                Frequently Asked <br class="hidden md:inline" />Questions
+              </h2>
+              <p
+                class="text-brand-gray text-sm md:text-base leading-relaxed max-w-xl"
+              >
+                Have questions about our dermatology treatments or clinic
+                procedures? Find quick answers from our clinical experts below.
+              </p>
+            </div>
+
+            <!-- Accordion Grid -->
+            <div class="space-y-4">
+              <!-- Item 1 -->
+              <label
+                class="relative block p-5 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-orange/20 cursor-pointer select-none transition-all duration-300 group"
+              >
+                <input
+                  type="checkbox"
+                  id="faq-sec7-1"
+                  class="peer hidden"
+                  checked
+                />
+                <span
+                  class="text-brand-blue font-bold text-base md:text-lg pr-12 block peer-checked:text-brand-orange transition-colors duration-300"
+                >
+                  Are the treatments painful?
+                </span>
+                <span
+                  class="absolute right-5 top-5 w-8 h-8 rounded-full bg-brand-blue/5 text-brand-blue flex items-center justify-center transition-all duration-300 peer-checked:rotate-45 peer-checked:bg-brand-orange peer-checked:text-white pointer-events-none"
+                >
+                  <i class="fa-solid fa-plus text-[10px]"></i>
+                </span>
+                <div
+                  class="max-h-0 opacity-0 overflow-hidden transition-all duration-300 peer-checked:max-h-40 peer-checked:opacity-100 peer-checked:mt-4"
+                >
+                  <p
+                    class="text-brand-gray text-xs md:text-sm leading-relaxed border-t border-gray-150/20 pt-3"
+                  >
+                    We use top-tier numbing creams and advanced cooling systems
+                    to ensure maximum comfort. Most clients report feeling only
+                    mild pressure or tingling.
+                  </p>
+                </div>
+              </label>
+
+              <!-- Item 2 -->
+              <label
+                class="relative block p-5 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-orange/20 cursor-pointer select-none transition-all duration-300 group"
+              >
+                <input type="checkbox" id="faq-sec7-2" class="peer hidden" />
+                <span
+                  class="text-brand-blue font-bold text-base md:text-lg pr-12 block peer-checked:text-brand-orange transition-colors duration-300"
+                >
+                  How long is the recovery time?
+                </span>
+                <span
+                  class="absolute right-5 top-5 w-8 h-8 rounded-full bg-brand-blue/5 text-brand-blue flex items-center justify-center transition-all duration-300 peer-checked:rotate-45 peer-checked:bg-brand-orange peer-checked:text-white pointer-events-none"
+                >
+                  <i class="fa-solid fa-plus text-[10px]"></i>
+                </span>
+                <div
+                  class="max-h-0 opacity-0 overflow-hidden transition-all duration-300 peer-checked:max-h-40 peer-checked:opacity-100 peer-checked:mt-4"
+                >
+                  <p
+                    class="text-brand-gray text-xs md:text-sm leading-relaxed border-t border-gray-150/20 pt-3"
+                  >
+                    Downtime depends on the procedure. Laser resurfacing and
+                    chemical peels may require 3ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“7 days of
+                    gentle healing, while injectables and mini-facials have
+                    virtually zero downtime.
+                  </p>
+                </div>
+              </label>
+
+              <!-- Item 3 -->
+              <label
+                class="relative block p-5 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-orange/20 cursor-pointer select-none transition-all duration-300 group"
+              >
+                <input type="checkbox" id="faq-sec7-3" class="peer hidden" />
+                <span
+                  class="text-brand-blue font-bold text-base md:text-lg pr-12 block peer-checked:text-brand-orange transition-colors duration-300"
+                >
+                  Do you offer customized skincare plans?
+                </span>
+                <span
+                  class="absolute right-5 top-5 w-8 h-8 rounded-full bg-brand-blue/5 text-brand-blue flex items-center justify-center transition-all duration-300 peer-checked:rotate-45 peer-checked:bg-brand-orange peer-checked:text-white pointer-events-none"
+                >
+                  <i class="fa-solid fa-plus text-[10px]"></i>
+                </span>
+                <div
+                  class="max-h-0 opacity-0 overflow-hidden transition-all duration-300 peer-checked:max-h-40 peer-checked:opacity-100 peer-checked:mt-4"
+                >
+                  <p
+                    class="text-brand-gray text-xs md:text-sm leading-relaxed border-t border-gray-150/20 pt-3"
+                  >
+                    Absolutely. We do not believe in one-size-fits-all
+                    treatments. Every client starts with a detailed skin
+                    analysis, after which Dr. Sania creates a bespoke medical
+                    plan.
+                  </p>
+                </div>
+              </label>
+
+              <!-- Item 4 -->
+              <label
+                class="relative block p-5 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-orange/20 cursor-pointer select-none transition-all duration-300 group"
+              >
+                <input type="checkbox" id="faq-sec7-4" class="peer hidden" />
+                <span
+                  class="text-brand-blue font-bold text-base md:text-lg pr-12 block peer-checked:text-brand-orange transition-colors duration-300"
+                >
+                  Who performs the treatments?
+                </span>
+                <span
+                  class="absolute right-5 top-5 w-8 h-8 rounded-full bg-brand-blue/5 text-brand-blue flex items-center justify-center transition-all duration-300 peer-checked:rotate-45 peer-checked:bg-brand-orange peer-checked:text-white pointer-events-none"
+                >
+                  <i class="fa-solid fa-plus text-[10px]"></i>
+                </span>
+                <div
+                  class="max-h-0 opacity-0 overflow-hidden transition-all duration-300 peer-checked:max-h-40 peer-checked:opacity-100 peer-checked:mt-4"
+                >
+                  <p
+                    class="text-brand-gray text-xs md:text-sm leading-relaxed border-t border-gray-150/20 pt-3"
+                  >
+                    All medical treatments are performed either directly by Dr.
+                    Sania Hussian or by certified cosmetologists under her close
+                    medical supervision and protocols.
+                  </p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Right Column: Premium Luxury Visual Composition -->
+          <div
+            class="w-full lg:w-1/2 relative flex justify-center lg:justify-end"
+            data-aos="fade-left"
+          >
+            <div class="relative w-full max-w-[460px]">
+              <!-- Subtle background glows for depth -->
+              <div
+                class="absolute -top-12 -right-12 w-48 h-48 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none"
+              ></div>
+              <div
+                class="absolute -bottom-12 -left-12 w-48 h-48 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none"
+              ></div>
+
+              <!-- Main Arch Portrait (Clinical Skincare Treatment) -->
+              <div
+                class="relative z-10 w-[80%] ml-auto rounded-t-full rounded-b-2xl overflow-hidden border-[6px] border-white shadow-2xl transition-all duration-500 hover:shadow-xl"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=500&auto=format&fit=crop"
+                  class="w-full h-[450px] object-cover transition-transform duration-700 hover:scale-105"
+                  alt="Clinical Skincare Treatment"
+                />
+                <!-- Soft top gradient overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-brand-blue/20 via-transparent to-transparent pointer-events-none"
+                ></div>
+              </div>
+
+              <!-- Floating Luxury Testimonial Card (Overlapping bottom-left) -->
+              <div
+                class="absolute bottom-[-20px] left-0 z-20 w-[65%] bg-white/95 backdrop-blur-md p-5 rounded-3xl shadow-2xl border border-gray-100/90 animate-float"
+              >
+                <div class="flex gap-1 text-brand-orange mb-2">
+                  <i class="fa-solid fa-star text-[10px]"></i>
+                  <i class="fa-solid fa-star text-[10px]"></i>
+                  <i class="fa-solid fa-star text-[10px]"></i>
+                  <i class="fa-solid fa-star text-[10px]"></i>
+                  <i class="fa-solid fa-star text-[10px]"></i>
+                </div>
+                <p
+                  class="text-brand-blue font-bold italic text-xs leading-relaxed mb-3"
+                >
+                  "Transforms skin and boosts confidence. Dr. Sania's clinical
+                  approach is outstanding!"
+                </p>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-7 h-7 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange text-[9px] font-bold"
+                  >
+                    RK
+                  </div>
+                  <div>
+                    <span
+                      class="block text-[10px] font-extrabold text-brand-blue leading-none"
+                      >Riya Kapoor</span
+                    >
+                    <span class="block text-[8px] text-brand-gray/80 mt-1"
+                      >Verified Skincare Client</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Circular Rotating Text Stamp (Top-Left floating) -->
+              <div
+                class="absolute top-10 left-4 z-20 w-24 h-24 bg-white/90 backdrop-blur-md rounded-full shadow-lg border border-gray-100 flex items-center justify-center circular-dial pointer-events-none"
+              >
+                <!-- SVG path for circular text -->
+                <svg class="w-20 h-20" viewBox="0 0 100 100">
+                  <path
+                    id="textPath"
+                    d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                    fill="none"
+                  />
+                  <text
+                    class="text-[7.5px] font-extrabold fill-brand-blue tracking-[2px]"
+                  >
+                    <textPath href="#textPath">
+                      AASTRA CLINICAL ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ SAFETY ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢
+                      BEAUTY ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢
+                    </textPath>
+                  </text>
+                </svg>
+                <!-- Central Icon -->
+                <div
+                  class="absolute w-8 h-8 rounded-full bg-brand-orange flex items-center justify-center text-white text-[10px] shadow-sm"
+                >
+                  <i class="fa-solid fa-check-double"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PATIENT TESTIMONIALS (REDESIGNED) -->
+    <section
+      class="py-24 md:py-32 bg-brand-cream overflow-hidden relative"
+      id="reviews"
+    >
+      <!-- Decorative elements -->
+      <div
+        class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-orange/[0.04] rounded-full blur-[120px] pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-brand-blue/[0.03] rounded-full blur-[100px] pointer-events-none"
+      ></div>
+
+      <div
+        class="container mx-auto px-4 md:px-12 w-[90%] max-w-[1600px] relative z-10"
+      >
+        <div class="flex flex-col lg:flex-row gap-16 lg:gap-20">
+          <!-- Left: Header & Stats Column -->
+          <div
+            class="w-full lg:w-5/12 lg:sticky lg:top-28 lg:self-start space-y-8"
+            data-aos="fade-right"
+          >
+            <!-- Label -->
+            <div
+              class="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100"
+            >
+              <div class="flex gap-0.5">
+                <i class="fa-solid fa-star text-yellow-400 text-[10px]"></i>
+                <i class="fa-solid fa-star text-yellow-400 text-[10px]"></i>
+                <i class="fa-solid fa-star text-yellow-400 text-[10px]"></i>
+                <i class="fa-solid fa-star text-yellow-400 text-[10px]"></i>
+                <i class="fa-solid fa-star text-yellow-400 text-[10px]"></i>
+              </div>
+              <span
+                class="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand-blue/60"
+                style="font-family: &quot;Inter&quot;, sans-serif"
+                >5-Star Rated</span
+              >
+            </div>
+
+            <!-- Headline -->
+            <h2
+              class="text-3xl sm:text-4xl md:text-[50px] font-extrabold text-brand-blue leading-[1.1] tracking-tight"
+            >
+              What our<br />patients
+              <span class="italic-serif text-brand-orange">say</span>
+            </h2>
+
+            <p
+              class="text-gray-400 text-sm md:text-base leading-relaxed max-w-md"
+              style="font-family: &quot;Inter&quot;, sans-serif"
+            >
+              Real results, real stories. Hear from patients who trusted us with
+              their skin transformation journey.
+            </p>
+
+            <!-- Google Rating Card -->
+            <div
+              class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 max-w-sm"
+            >
+              <div class="flex items-center gap-4 mb-4">
+                <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"
+                    fill="#4285F4"
+                  />
+                  <path
+                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                    fill="#34A853"
+                  />
+                  <path
+                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                    fill="#FBBC05"
+                  />
+                  <path
+                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                    fill="#EA4335"
+                  />
+                </svg>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-3xl font-extrabold text-brand-blue"
+                      >4.9</span
+                    >
+                    <div class="flex gap-0.5">
+                      <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                      <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                      <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                      <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                      <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                    </div>
+                  </div>
+                  <p class="text-gray-400 text-xs font-medium">
+                    Based on 500+ Google Reviews
+                  </p>
+                </div>
+              </div>
+              <!-- Mini stat bar -->
+              <div
+                class="flex items-center gap-4 pt-4 border-t border-gray-100"
+              >
+                <div class="flex -space-x-2">
+                  <div
+                    class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 border-2 border-white flex items-center justify-center text-white text-[10px] font-bold"
+                  >
+                    P
+                  </div>
+                  <div
+                    class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 border-2 border-white flex items-center justify-center text-white text-[10px] font-bold"
+                  >
+                    A
+                  </div>
+                  <div
+                    class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 border-2 border-white flex items-center justify-center text-white text-[10px] font-bold"
+                  >
+                    R
+                  </div>
+                  <div
+                    class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 border-2 border-white flex items-center justify-center text-white text-[10px] font-bold"
+                  >
+                    M
+                  </div>
+                  <div
+                    class="w-8 h-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-gray-500 text-[9px] font-bold"
+                  >
+                    +496
+                  </div>
+                </div>
+                <p class="text-[11px] text-gray-400">
+                  Happy patients this year
+                </p>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <a
+              href="tel:+919990035533"
+              class="btn-premium-orange inline-flex items-center gap-2.5 text-white font-bold text-sm px-8 py-4 rounded-full uppercase tracking-wider"
+            >
+              <i class="fa-solid fa-calendar-check text-sm"></i>
+              Book Free Consultation
+            </a>
+          </div>
+
+          <!-- Right: Testimonial Cards -->
+          <div class="w-full lg:w-7/12 space-y-5" data-aos="fade-left">
+            <!-- Card 1 — Featured -->
+            <div
+              class="group bg-white rounded-3xl p-7 md:p-9 shadow-md hover:shadow-xl border border-gray-100/80 transition-all duration-500 relative overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/[0.04] rounded-full blur-2xl pointer-events-none -translate-y-1/2 translate-x-1/2"
+              ></div>
+              <!-- Stars & Badge row -->
+              <div class="flex items-center justify-between mb-5">
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                </div>
+                <span
+                  class="inline-flex items-center gap-1.5 bg-green-50 text-green-600 text-[10px] font-bold uppercase tracking-wider rounded-full px-3 py-1"
+                  ><i class="fa-solid fa-circle-check text-[8px]"></i>Verified
+                  Patient</span
+                >
+              </div>
+              <!-- Quote -->
+              <p
+                class="text-gray-600 text-[15px] md:text-base leading-[1.8] mb-7 relative z-10"
+                style="font-family: &quot;Inter&quot;, sans-serif"
+              >
+                "I had severe melasma patches for years that destroyed my
+                confidence. Dr. Sania understood my concerns deeply and crafted
+                a personalized laser + peel treatment plan. After just 6
+                sessions, my skin is
+                <strong class="text-brand-blue">completely transformed</strong>.
+                The clinic feels like a 5-star spa — I can't recommend it
+                enough!"
+              </p>
+              <!-- Author -->
+              <div class="flex items-center gap-4">
+                <div class="relative">
+                  <div
+                    class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-white font-bold text-lg ring-[3px] ring-pink-100"
+                  >
+                    P
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <p class="font-bold text-brand-blue text-sm">Priya Sharma</p>
+                  <p
+                    class="text-gray-400 text-xs"
+                    style="font-family: &quot;Inter&quot;, sans-serif"
+                  >
+                    6 months ago
+                  </p>
+                </div>
+                <span
+                  class="hidden sm:inline-flex items-center gap-1 bg-brand-cream rounded-full px-3 py-1 text-[10px] font-semibold text-brand-blue/70 border border-brand-orange/10"
+                  ><i
+                    class="fa-solid fa-sparkles text-brand-orange text-[8px]"
+                  ></i
+                  >Melasma Treatment</span
+                >
+              </div>
+            </div>
+
+            <!-- Cards Row (2 side by side) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <!-- Card 2 -->
+              <div
+                class="group bg-white rounded-3xl p-6 shadow-md hover:shadow-xl border border-gray-100/80 transition-all duration-500 flex flex-col"
+              >
+                <div class="flex items-center gap-1 mb-4">
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                </div>
+                <p
+                  class="text-gray-500 text-[13px] leading-[1.8] mb-5 flex-1"
+                  style="font-family: &quot;Inter&quot;, sans-serif"
+                >
+                  "My acne scars have reduced by 80% after fractional CO2 laser
+                  sessions. Dr. Sania is incredibly patient and explains
+                  everything. Best dermatologist!"
+                </p>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-white font-bold text-xs ring-[3px] ring-blue-100"
+                  >
+                    A
+                  </div>
+                  <div>
+                    <p class="font-bold text-brand-blue text-sm">
+                      Ananya Reddy
+                    </p>
+                    <div class="flex items-center gap-2">
+                      <p class="text-gray-400 text-[11px]">3 months ago</p>
+                      <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                      <span class="text-brand-orange text-[10px] font-semibold"
+                        >Scar Treatment</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div
+                class="group bg-white rounded-3xl p-6 shadow-md hover:shadow-xl border border-gray-100/80 transition-all duration-500 flex flex-col"
+              >
+                <div class="flex items-center gap-1 mb-4">
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                </div>
+                <p
+                  class="text-gray-500 text-[13px] leading-[1.8] mb-5 flex-1"
+                  style="font-family: &quot;Inter&quot;, sans-serif"
+                >
+                  "My hair fall reduced dramatically after PRP therapy. I was
+                  losing confidence but Dr. Sania's approach brought my hair
+                  back to life. Truly grateful!"
+                </p>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white font-bold text-xs ring-[3px] ring-amber-100"
+                  >
+                    R
+                  </div>
+                  <div>
+                    <p class="font-bold text-brand-blue text-sm">Rahul Verma</p>
+                    <div class="flex items-center gap-2">
+                      <p class="text-gray-400 text-[11px]">2 months ago</p>
+                      <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                      <span class="text-brand-orange text-[10px] font-semibold"
+                        >Hair Fall</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 — Medium -->
+            <div
+              class="group bg-white rounded-3xl p-7 shadow-md hover:shadow-xl border border-gray-100/80 transition-all duration-500 relative overflow-hidden"
+            >
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                  <i
+                    class="fa-solid fa-star-half-stroke text-yellow-400 text-sm"
+                  ></i>
+                </div>
+                <span
+                  class="inline-flex items-center gap-1.5 bg-green-50 text-green-600 text-[10px] font-bold uppercase tracking-wider rounded-full px-3 py-1"
+                  ><i class="fa-solid fa-circle-check text-[8px]"></i
+                  >Verified</span
+                >
+              </div>
+              <p
+                class="text-gray-600 text-[14px] leading-[1.8] mb-6"
+                style="font-family: &quot;Inter&quot;, sans-serif"
+              >
+                "The HIFU face lifting treatment at Aastra is magical! My
+                jawline looks so defined and my skin feels tighter. No surgery,
+                no downtime — just
+                <strong class="text-brand-blue">amazing natural results</strong
+                >. The entire team made me feel so comfortable."
+              </p>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white font-bold text-sm ring-[3px] ring-emerald-100"
+                >
+                  M
+                </div>
+                <div class="flex-1">
+                  <p class="font-bold text-brand-blue text-sm">Meera Kapoor</p>
+                  <p class="text-gray-400 text-[11px]">1 month ago</p>
+                </div>
+                <span
+                  class="hidden sm:inline-flex items-center gap-1 bg-brand-cream rounded-full px-3 py-1 text-[10px] font-semibold text-brand-blue/70 border border-brand-orange/10"
+                  ><i
+                    class="fa-solid fa-sparkles text-brand-orange text-[8px]"
+                  ></i
+                  >Face Lifting</span
+                >
+              </div>
+            </div>
+
+            <!-- Card 5 — Small -->
+            <div
+              class="group bg-white rounded-3xl p-6 shadow-md hover:shadow-xl border border-gray-100/80 transition-all duration-500 flex flex-col"
+            >
+              <div class="flex items-center gap-1 mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+              </div>
+              <p
+                class="text-gray-500 text-[13px] leading-[1.8] mb-5"
+                style="font-family: &quot;Inter&quot;, sans-serif"
+              >
+                "Got the HydraFacial for my wedding prep — my skin was literally
+                glowing on my big day! The staff is so warm and professional.
+                Already booked my next session. 💕"
+              </p>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center text-white font-bold text-xs ring-[3px] ring-rose-100"
+                >
+                  S
+                </div>
+                <div class="flex-1">
+                  <p class="font-bold text-brand-blue text-sm">Sneha Patel</p>
+                  <div class="flex items-center gap-2">
+                    <p class="text-gray-400 text-[11px]">2 weeks ago</p>
+                    <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                    <span class="text-brand-orange text-[10px] font-semibold"
+                      >Skin Rejuvenation</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 13: LOCATION MAP -->
+    <section class="relative h-[400px] bg-gray-200 mt-10">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.7152203584424!2d-118.40035632344795!3d34.0768074177894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d3d147e3%3A0x65c5c00e620d4370!2sBeverly%20Hills%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+        class="w-full h-full border-0"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+
+      <!-- Optional empty space if needed, map is above this. -->
+    </section>
+
+    <!-- SECTION: LEAD GENERATION FORM -->
+    <section class="w-full relative flex flex-col md:flex-row shadow-[0_0px_60px_rgba(0,0,0,0.08)] z-10" id="appointment" data-aos="fade-up" data-aos-duration="800">
+        <div
+          class="w-full md:w-5/12 bg-gradient-to-br from-[#081B3E] to-[#122c5e] text-white py-20 px-8 lg:pl-[10vw] xl:pl-[15vw] lg:pr-16 flex flex-col justify-center relative overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 opacity-10"
+            style="
+              background-image: radial-gradient(
+                circle at 2px 2px,
+                white 1px,
+                transparent 0
+              );
+              background-size: 24px 24px;
+            "
+          ></div>
+          <h3 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-5 relative z-10 leading-tight">
+            Book Your Free Consultation
+          </h3>
+          <p class="text-[15px] lg:text-base text-white/80 mb-10 relative z-10 leading-relaxed font-light">
+            Take the first step towards flawless skin. Leave your details below
+            and our specialists will contact you shortly.
+          </p>
+          <div class="space-y-6 relative z-10 text-sm font-medium">
+            <div class="flex items-center gap-5 group">
+              <div
+                class="w-12 h-12 rounded-full bg-white/10 group-hover:bg-brand-orange/20 flex items-center justify-center text-brand-orange transition-all duration-300 backdrop-blur-md"
+              >
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <p class="tracking-wide">+91 99900 35533</p>
+            </div>
+            <div class="flex items-center gap-5 group">
+              <div
+                class="w-12 h-12 rounded-full bg-white/10 group-hover:bg-brand-orange/20 flex items-center justify-center text-brand-orange transition-all duration-300 backdrop-blur-md"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <p class="tracking-wide">aastra.aesthetic2403@gmail.com</p>
+            </div>
+          </div>
+          <div class="flex gap-4 mt-14 relative z-10">
+            <a
+              href="https://www.facebook.com/people/Aastra-Aesthetic/61589622653365/"
+              target="_blank"
+              class="w-10 h-10 rounded-full border border-white/20 hover:border-brand-orange hover:bg-brand-orange flex items-center justify-center transition-all duration-300"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/aastra_aesthetic/"
+              target="_blank"
+              class="w-10 h-10 rounded-full border border-white/20 hover:border-brand-orange hover:bg-brand-orange flex items-center justify-center transition-all duration-300"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/@AastraAesthetic"
+              target="_blank"
+              class="w-10 h-10 rounded-full border border-white/20 hover:border-brand-orange hover:bg-brand-orange flex items-center justify-center transition-all duration-300"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+            <a
+              href="https://www.google.com/search?q=Aastra+Aesthetic&stick=H4sIAAAAAAAA_-NgU1I1qDBONDAyNzdOTjMyszBINkqzMqgwTzE0MUwyTTQyNjJKS000W8Qq4JhYXFKUqOCYWlySkVqSmQwA97gaNzwAAAA&hl=en&mat=CcJmeOlogZkOElcBTVDHnkJZXYz-CXYL2cIciOvsPDV1qtgko3PYNvJPl9HzqECNSV3-3pJxtfFeQHSJgk1h9xd-J7rANeUTgmtMh_TpDcjTgdnUkIuAfG89jiSamsenrLs&authuser=0&sei=d5QpatGPC6Cl0-kPs6Lt4AQ"
+              target="_blank"
+              class="w-10 h-10 rounded-full border border-white/20 hover:border-brand-orange hover:bg-brand-orange flex items-center justify-center transition-all duration-300"
+              ><i class="fa-brands fa-google"></i
+            ></a>
+          </div>
+        </div>
+        <div class="w-full md:w-7/12 bg-[#FAFAFC] py-20 px-8 lg:pr-[10vw] xl:pr-[15vw] lg:pl-16 flex flex-col justify-center relative">
+          <form class="space-y-6" action="#" method="POST">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  class="block text-[11px] font-extrabold text-[#6A7B92] uppercase tracking-widest mb-2.5"
+                  >First Name</label
+                >
+                <input
+                  type="text"
+                  required
+                  class="w-full bg-white border border-[#E5E7EB] rounded-2xl px-5 py-3.5 text-[14.5px] focus:outline-none focus:border-[#f26419] focus:ring-2 focus:ring-[#f26419]/20 transition-all duration-300 shadow-sm text-[#6A7B92] placeholder-[#9ca3af] font-medium"
+                  placeholder="John"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-[11px] font-extrabold text-[#6A7B92] uppercase tracking-widest mb-2.5"
+                  >Last Name</label
+                >
+                <input
+                  type="text"
+                  required
+                  class="w-full bg-white border border-[#E5E7EB] rounded-2xl px-5 py-3.5 text-[14.5px] focus:outline-none focus:border-[#f26419] focus:ring-2 focus:ring-[#f26419]/20 transition-all duration-300 shadow-sm text-[#6A7B92] placeholder-[#9ca3af] font-medium"
+                  placeholder="Doe"
+                />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  class="block text-[11px] font-extrabold text-[#6A7B92] uppercase tracking-widest mb-2.5"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  required
+                  class="w-full bg-white border border-[#E5E7EB] rounded-2xl px-5 py-3.5 text-[14.5px] focus:outline-none focus:border-[#f26419] focus:ring-2 focus:ring-[#f26419]/20 transition-all duration-300 shadow-sm text-[#6A7B92] placeholder-[#9ca3af] font-medium"
+                  placeholder="john@example.com"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-[11px] font-extrabold text-[#6A7B92] uppercase tracking-widest mb-2.5"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  required
+                  class="w-full bg-white border border-[#E5E7EB] rounded-2xl px-5 py-3.5 text-[14.5px] focus:outline-none focus:border-[#f26419] focus:ring-2 focus:ring-[#f26419]/20 transition-all duration-300 shadow-sm text-[#6A7B92] placeholder-[#9ca3af] font-medium"
+                  placeholder="+91 99900 35533"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                class="block text-[11px] font-extrabold text-[#6A7B92] uppercase tracking-widest mb-2.5"
+                >Service of Interest</label
+              >
+              <select
+                class="w-full bg-white border border-[#E5E7EB] rounded-2xl px-5 py-3.5 text-[14.5px] focus:outline-none focus:border-[#f26419] focus:ring-2 focus:ring-[#f26419]/20 transition-all duration-300 shadow-sm text-[#6A7B92] font-medium appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%239CA3AF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px_12px] bg-no-repeat bg-[position:right_1.25rem_center]"
+              >
+                <option>Acne Scar Treatment</option>
+                <option>Laser Hair Reduction</option>
+                <option>Anti-Aging & Botox</option>
+                <option>Skin Pigmentation</option>
+                <option>General Dermatology</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-[#f26419] text-white font-extrabold text-[13.5px] px-8 py-[14px] rounded-full uppercase tracking-[0.15em] shadow-[0_8px_16px_rgba(242,100,25,0.35)] hover:shadow-[0_12px_20px_rgba(242,100,25,0.45)] hover:-translate-y-0.5 transition-all duration-300 mt-6"
+            >
+              Submit Request
+            </button>
+          </form>
+        </div>
+    </section>
+
+    <!-- FOOTER (Dark Blue matching the image) -->
+    <footer class="bg-[#081B3E] text-white pt-16 pb-8">
+      <div class="container mx-auto px-4 md:px-12 w-[90%] max-w-[1600px]">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <!-- Brand Info -->
+          <div class="md:col-span-1">
+            <div class="flex items-center gap-2 mb-4">
+              <img src="aastralogo.png" class="h-8 w-auto object-contain" alt="Aastra Aesthetic" />
+            </div>
+            <p class="text-white/60 text-xs font-light leading-relaxed">
+              Premium aesthetic and clinical skincare tailored to enhance your
+              natural beauty.
+            </p>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h4 class="text-xs font-bold uppercase mb-4">Explore</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-white/60 hover:text-brand-orange text-xs"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/60 hover:text-brand-orange text-xs"
+                  >Treatments</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/60 hover:text-brand-orange text-xs"
+                  >Shop</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div>
+            <h4 class="text-xs font-bold uppercase mb-4">Legal</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-white/60 hover:text-brand-orange text-xs"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white/60 hover:text-brand-orange text-xs"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4 class="text-xs font-bold uppercase mb-4">Newsletter</h4>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Email address"
+                class="bg-white/10 px-3 py-2 rounded-l text-xs w-full focus:outline-none"
+              />
+              <button class="bg-brand-orange px-3 py-2 rounded-r text-xs">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-white/10 pt-6 text-center">
+          <p class="text-white/40 text-[10px] uppercase">
+            Ãƒâ€šÃ‚Â© 2026 Aastra Aesthetic. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script>
+      // Initialize LightGallery for the 4 bottom gallery images
+      document.addEventListener("DOMContentLoaded", () => {
+        lightGallery(document.getElementById("lightgallery-gallery"), {
+          selector: "a",
+          speed: 500,
+          download: false,
+          counter: false,
+        });
+      });
+
+      // Before & After Slider Logic
+      document
+        .querySelectorAll(".before-after-container")
+        .forEach((container) => {
+          const slider = container.querySelector(".slider-input");
+          const handle = container.querySelector(".slider-handle");
+          const afterImage = container.querySelector(".after-image");
+
+          slider.addEventListener("input", (e) => {
+            const pos = e.target.value;
+            handle.style.left = `${pos}%`;
+            afterImage.style.clipPath = `inset(0 0 0 ${pos}%)`;
+          });
+        });
+
+      // FAQ Accordion Logic
+      function toggleFaq(btn) {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector(".faq-icon");
+
+        const isOpen =
+          content.style.maxHeight && content.style.maxHeight !== "0px";
+
+        // Close all
+        document.querySelectorAll(".faq-content").forEach((c) => {
+          c.style.maxHeight = "0px";
+        });
+        document.querySelectorAll(".faq-icon").forEach((i) => {
+          i.classList.remove("rotate-0", "text-brand-orange");
+          i.classList.add("-rotate-90", "text-brand-blue/70");
+        });
+
+        // If it was not open, open it
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + "px";
+          icon.classList.remove("-rotate-90", "text-brand-blue/70");
+          icon.classList.add("rotate-0", "text-brand-orange");
+        }
+      }
+
+      // Initialize the first FAQ item to be open
+      document.addEventListener("DOMContentLoaded", () => {
+        const contents = document.querySelectorAll(".faq-content");
+        if (contents.length > 0) {
+          contents[0].style.maxHeight = contents[0].scrollHeight + "px";
+        }
+      });
+    </script>
+  </body>
+</html>
